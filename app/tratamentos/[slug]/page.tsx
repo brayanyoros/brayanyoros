@@ -84,7 +84,7 @@ export default async function TreatmentPage({
               </WhatsAppCTA>
             </div>
           </div>
-          <PlaceholderMedia label={`Foto real — ${treatment.shortName}`} ratio="aspect-[4/5]" />
+          <PlaceholderMedia label={`Foto real — ${treatment.shortName}`} ratio="aspect-[4/5]" icon={treatment.icon} />
         </div>
       </section>
 

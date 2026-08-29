@@ -71,6 +71,8 @@ export function HomeExperience() {
   const cases = resultCases.map((c) => ({ ...c, meta: caseMeta[c.slug] }));
   const activeCaseData = cases[activeCase];
   const activeReviewData = testimonials[activeReview];
+  const activeTreatmentIcon =
+    treatments.find((t) => t.slug === treatmentLinks[activeTreatment].slug)?.icon ?? "tooth";
 
   return (
     <div style={{ fontFamily: "var(--font-sans)" }} className="relative overflow-x-hidden bg-cream text-ink">
@@ -262,6 +264,7 @@ export function HomeExperience() {
               tone="cream"
               rounded={false}
               ratio="h-full w-full"
+              icon={activeTreatmentIcon}
             />
           </div>
           <div className="mb-6 block h-[260px] w-full overflow-hidden lg:hidden">
@@ -270,6 +273,7 @@ export function HomeExperience() {
               tone="cream"
               rounded={false}
               ratio="h-full w-full"
+              icon={activeTreatmentIcon}
             />
           </div>
           <div className="w-full lg:w-[56%]">
@@ -318,6 +322,7 @@ export function HomeExperience() {
             tone="primary"
             rounded={false}
             ratio="h-full w-full"
+            icon="smile"
           />
         </div>
         <div

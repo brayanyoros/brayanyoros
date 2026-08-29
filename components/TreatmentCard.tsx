@@ -9,6 +9,7 @@ export function TreatmentCard({ treatment }: { treatment: Treatment }) {
         label={`Foto real — ${treatment.shortName}`}
         ratio="aspect-[16/10]"
         tone="cream"
+        icon={treatment.icon}
       />
       <div className="flex flex-1 flex-col p-6">
         <h3 className="font-display text-xl font-semibold text-ink">{treatment.name}</h3>

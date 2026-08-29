@@ -65,6 +65,7 @@ export type Treatment = {
   slug: string;
   name: string;
   shortName: string;
+  icon: "tooth" | "drop" | "crown";
   metaTitle: string;
   metaDescription: string;
   problem: string;
@@ -86,6 +87,7 @@ export const treatments: Treatment[] = [
     slug: "clareamento-dental-teresopolis",
     name: "Clareamento Dental",
     shortName: "Clareamento Dental",
+    icon: "tooth",
     metaTitle: "Clareamento Dental em Teresópolis | Vieira Odontologia",
     metaDescription:
       "Clareamento dental em consultório ou conjugado (consultório + caseiro) em Teresópolis, com acompanhamento do Dr. Luis Vieira (CRO-RJ 55611). Agende sua avaliação.",
@@ -137,6 +139,7 @@ export const treatments: Treatment[] = [
     slug: "restauracao-estetica-resina-teresopolis",
     name: "Restaurações Estéticas em Resina Composta",
     shortName: "Restaurações Estéticas",
+    icon: "drop",
     metaTitle: "Restaurações Estéticas em Resina Composta em Teresópolis | Vieira Odontologia",
     metaDescription:
       "Restaurações em resina composta, fechamento de diastemas, troca de restaurações antigas e reabilitação de dentes fraturados em Teresópolis, com o Dr. Luis Vieira (CRO-RJ 55611).",
@@ -189,6 +192,7 @@ export const treatments: Treatment[] = [
     slug: "protese-dentaria-teresopolis",
     name: "Prótese Dentária",
     shortName: "Prótese Dentária",
+    icon: "crown",
     metaTitle: "Prótese Dentária em Teresópolis | Vieira Odontologia",
     metaDescription:
       "Reabilitação protética em Teresópolis com o Dr. Luis Vieira, formado em Técnico em Prótese Dentária e em especialização na área. Agende sua avaliação.",
