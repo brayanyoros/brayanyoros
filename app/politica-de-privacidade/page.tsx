@@ -69,8 +69,8 @@ export default function PoliticaPrivacidadePage() {
             Nos termos da Lei nº 13.709/2018 (Lei Geral de Proteção de Dados),
             você pode solicitar a qualquer momento a confirmação, o acesso, a
             correção ou a exclusão dos seus dados pessoais, entrando em
-            contato pelo WhatsApp {clinic.phoneDisplay} ou pelo e-mail
-            [PREENCHER].
+            contato pelo WhatsApp {clinic.phoneDisplay} ou pelo e-mail{" "}
+            {clinic.contactEmail}.
           </p>
         </div>
 
@@ -88,7 +88,7 @@ export default function PoliticaPrivacidadePage() {
           <h2 className="font-display text-xl font-semibold text-ink">7. Contato</h2>
           <p className="mt-2">
             Dúvidas sobre esta política podem ser encaminhadas pelo WhatsApp{" "}
-            {clinic.phoneDisplay} ou pelo e-mail [PREENCHER].
+            {clinic.phoneDisplay} ou pelo e-mail {clinic.contactEmail}.
           </p>
         </div>
       </div>

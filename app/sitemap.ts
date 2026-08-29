@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/clinica",
     "/equipe",
     "/tratamentos",
+    "/resultados",
     "/avaliacoes",
     "/blog",
     "/contato",

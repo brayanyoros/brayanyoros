@@ -98,6 +98,9 @@ export function Footer() {
                 <Link href="/equipe" className="hover:text-cream">Equipe</Link>
               </li>
               <li>
+                <Link href="/resultados" className="hover:text-cream">Resultados</Link>
+              </li>
+              <li>
                 <Link href="/avaliacoes" className="hover:text-cream">Avaliações</Link>
               </li>
               <li>

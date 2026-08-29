@@ -3,7 +3,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { ScheduleCTA } from "@/components/CTAButton";
 import { BreadcrumbSchema } from "@/components/StructuredData";
 import { TrackedExternalLink } from "@/components/TrackedLink";
-import { clinic } from "@/lib/clinic-data";
+import { clinic, testimonials } from "@/lib/clinic-data";
 
 export const metadata: Metadata = {
   title: "Avaliações",
@@ -26,7 +26,7 @@ export default function AvaliacoesPage() {
           eyebrow="Avaliações"
           title="O que nossos pacientes dizem"
           align="center"
-          description="Preferimos mostrar a nota real da nossa clínica no Google a criar depoimentos fictícios."
+          description="Nota e avaliações reais, publicadas por pacientes no Google — sem depoimentos fictícios."
         />
 
         <div className="mx-auto mt-10 max-w-md rounded-3xl border border-line bg-white/60 p-10">
@@ -49,13 +49,27 @@ export default function AvaliacoesPage() {
           </TrackedExternalLink>
         </div>
 
-        <p className="mx-auto mt-8 max-w-lg text-sm text-ink-soft">
-          Assim que tivermos autorização formal dos pacientes, avaliações
-          selecionadas serão adicionadas nesta página com nome, tratamento e
-          comentário original — sem edições de conteúdo.
+        <div className="mx-auto mt-16 grid max-w-4xl gap-5 text-left sm:grid-cols-2">
+          {testimonials.map((t) => (
+            <figure key={t.name} className="rounded-2xl border border-line bg-white/60 p-6">
+              <p className="tracking-tight text-accent" aria-hidden="true">
+                {"★".repeat(t.rating)}
+              </p>
+              <blockquote className="mt-3 text-[15px] leading-relaxed text-ink-soft">
+                “{t.text}”
+              </blockquote>
+              <figcaption className="mt-4 text-sm font-semibold text-ink">
+                {t.name}
+                <span className="ml-2 font-normal text-ink-soft">— {t.date}</span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+        <p className="mx-auto mt-6 max-w-lg text-xs text-ink-soft">
+          Avaliações públicas de pacientes, publicadas no Google.
         </p>
 
-        <div className="mt-8 flex justify-center">
+        <div className="mt-10 flex justify-center">
           <ScheduleCTA location="avaliacoes">Quero agendar minha avaliação</ScheduleCTA>
         </div>
       </section>

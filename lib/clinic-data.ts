@@ -25,8 +25,8 @@ export const clinic = {
   addressFull: "Av. Lúcio Meira, 100, 8º andar, Várzea, Teresópolis - RJ",
   postalCode: "25953-001",
 
-  // Único número informado. Utilizado como telefone e WhatsApp.
-  // Confirmar se existe uma linha fixa adicional [PREENCHER].
+  // Número principal — usado como telefone e WhatsApp em todo o site
+  // (NAP consistente). Confirmado com o cliente.
   phoneDisplay: "(21) 96669-1006",
   phoneE164: "+5521966691006",
   whatsappNumber: "5521966691006",
@@ -35,6 +35,12 @@ export const clinic = {
   },
   whatsappDefaultMessage:
     "Olá! Vim pelo site e gostaria de agendar uma avaliação na Vieira Odontologia.",
+
+  // Contato alternativo informado pelo cliente (site anterior). Mantido
+  // como opção secundária no Contato — o WhatsApp acima segue como
+  // canal principal para preservar consistência de NAP.
+  altPhoneDisplay: "(21) 99951-0051",
+  contactEmail: "luisfrodriguesvieira@gmail.com",
 
   googleMapsUrl:
     "https://www.google.com/maps/place/Vieira+Odontologia+%7C+Dentista+%7C+Pr%C3%B3teses+%7C+Implante+%7C+Aparelho+invisivel+SouSmile+%7C+Teres%C3%B3polis+-+Rio+de+Janeiro/@-22.4136464,-42.9700884,3a,75y,90t/data=!3m8!1e2",
@@ -247,6 +253,49 @@ export const teamMembers = [
     areas: ["Clareamento dental", "Restaurações estéticas em resina composta", "Reabilitação protética"],
     bio:
       "Luis Vieira dá continuidade a uma tradição familiar de mais de 50 anos na odontologia em Teresópolis, atendendo no mesmo endereço fundado por seu avô. Formado em Odontologia pela UNIFESO e com base técnica em Prótese Dentária, mantém-se em atualização constante — hoje em especialização em Prótese Dentária pela São Leopoldo Mandic — para conduzir cada caso com critério técnico e atenção individual.",
+    // Texto original do Dr. Luis Vieira, em primeira pessoa, já publicado
+    // no site anterior da clínica ("Minha História").
+    personalStatement: [
+      "Minha história com a odontologia começou antes mesmo de eu nascer. Venho de uma família de dentistas que há mais de 50 anos atua em Teresópolis, desde quando meu avô fundou a clínica onde tenho o privilégio de trabalhar até hoje.",
+      "Comecei minha trajetória na área da saúde com a formação em Prótese Dentária — foi ali que descobri minha paixão por devolver sorrisos e autoestima às pessoas. Logo depois, entrei na faculdade de Odontologia, onde aprofundei esse propósito e me formei cirurgião-dentista.",
+      "Hoje, estou concluindo a especialização em Prótese Dentária, fechando um ciclo que começou lá atrás, mas que, na verdade, é apenas o início de uma nova fase. Carrego comigo a tradição da minha família, o amor pela profissão e o compromisso de continuar oferecendo um trabalho ético, humano e de excelência à nossa cidade.",
+    ],
+  },
+];
+
+export type Testimonial = {
+  name: string;
+  date: string;
+  rating: number;
+  text: string;
+};
+
+// Avaliações reais de pacientes, já publicadas publicamente no Google e
+// reproduzidas no site anterior da clínica (odontovieira.com.br).
+export const testimonials: Testimonial[] = [
+  {
+    name: "João Pedro",
+    date: "9 de outubro de 2024",
+    rating: 5,
+    text: "A melhor clínica que já fui nessa cidade. Excelentes Profissionais, qualidade e resultados impecáveis.",
+  },
+  {
+    name: "Felipe Cunha Costa",
+    date: "9 de outubro de 2024",
+    rating: 5,
+    text: "Qualidade e Atendimento que Teresópolis precisa! Recomendo muito! Tive ótima experiência.",
+  },
+  {
+    name: "João Fernandes",
+    date: "9 de outubro de 2024",
+    rating: 5,
+    text: "Super recomendo, melhor atendimento e profissionalismo. O Dr Luís dispensa comentários, excelente profissional. Sucesso!",
+  },
+  {
+    name: "Emilia Alcoforado",
+    date: "Avaliação recente",
+    rating: 5,
+    text: "Atendimento excelente com Dr. Luis Vieira, profissional atencioso e tranquilo. Tive um super atendimento :)",
   },
 ];
 

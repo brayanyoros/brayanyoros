@@ -9,7 +9,7 @@ import { PlaceholderMedia } from "@/components/PlaceholderMedia";
 import { ProcessSteps } from "@/components/ProcessSteps";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { FAQSchema } from "@/components/StructuredData";
-import { clinic, teamMembers, treatments, objections } from "@/lib/clinic-data";
+import { clinic, teamMembers, treatments, objections, testimonials } from "@/lib/clinic-data";
 import { TrackedExternalLink } from "@/components/TrackedLink";
 
 export const metadata: Metadata = {
@@ -170,10 +170,24 @@ export default function HomePage() {
               Ver avaliações no Google
             </TrackedExternalLink>
           </div>
-          <p className="mx-auto mt-6 max-w-lg text-sm text-cream/70">
-            Em breve, com autorização dos pacientes, traremos depoimentos
-            selecionados diretamente nesta seção.
-          </p>
+          <div className="mx-auto mt-10 grid max-w-3xl gap-4 text-left sm:grid-cols-2">
+            {testimonials.slice(0, 2).map((t) => (
+              <figure key={t.name} className="rounded-2xl bg-cream/10 p-6">
+                <blockquote className="text-[15px] leading-relaxed text-cream/90">
+                  “{t.text}”
+                </blockquote>
+                <figcaption className="mt-3 text-sm font-semibold text-cream/80">
+                  {t.name}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+          <Link
+            href="/avaliacoes"
+            className="mt-6 inline-block text-sm font-semibold text-cream underline underline-offset-4"
+          >
+            Ver todas as avaliações →
+          </Link>
           <div className="mt-8">
             <ScheduleCTA
               location="home_social_proof"

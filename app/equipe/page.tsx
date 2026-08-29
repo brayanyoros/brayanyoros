@@ -79,6 +79,24 @@ export default function EquipePage() {
           ))}
         </div>
       </section>
+
+      {teamMembers.map((member) =>
+        member.personalStatement ? (
+          <section key={`${member.name}-historia`} className="bg-cream-dark/50 py-16 sm:py-24">
+            <div className="container-page max-w-2xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.14em] text-accent">
+                Minha história
+              </p>
+              <blockquote className="mt-4 space-y-4 font-display text-xl italic leading-relaxed text-ink sm:text-2xl">
+                {member.personalStatement.map((paragraph, i) => (
+                  <p key={i}>{paragraph}</p>
+                ))}
+              </blockquote>
+              <p className="mt-4 text-sm font-medium text-ink-soft">— {member.name}</p>
+            </div>
+          </section>
+        ) : null
+      )}
     </>
   );
 }

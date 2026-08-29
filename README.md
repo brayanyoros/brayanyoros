@@ -26,6 +26,8 @@ npm run start
   qualquer informação da clínica mudar (é usado em todas as páginas e no
   schema.org).
 - `lib/blog-data.ts` — posts do blog e clusters de conteúdo planejados.
+- `lib/results-data.ts` — casos reais de "antes e depois" (página
+  `/resultados`), com texto já publicado e autorizado no site anterior.
 - `lib/site.ts` — domínio final do site (`SITE_URL`), usado em metadados,
   sitemap e dados estruturados.
 - `app/` — rotas (App Router). Cada tratamento tem sua própria URL em
@@ -48,11 +50,30 @@ abrir esse site diretamente. Uma busca web confirmou que:
   Jundiaí - SP. Não usar esse domínio por engano.
 - O CEP do endereço é `25953-001` (já incluído em `lib/clinic-data.ts`).
 
-**Próximo passo recomendado:** alguém com acesso normal à internet deve
-abrir `odontovieira.com.br` e copiar para `lib/clinic-data.ts` os campos
-ainda em `[PREENCHER]` abaixo (horário, tecnologias, formas de pagamento,
-convênios) e, se houver, depoimentos de pacientes já publicados com
-autorização e fotos reais da clínica/equipe.
+**Atualização:** o próprio cliente enviou prints do site anterior durante
+a sessão, o que permitiu incorporar conteúdo real diretamente no código:
+
+- História pessoal do Dr. Luis Vieira, em primeira pessoa
+  (`lib/clinic-data.ts` → `teamMembers[0].personalStatement`), exibida em
+  `/equipe`.
+- 4 avaliações reais de pacientes, já públicas no Google
+  (`lib/clinic-data.ts` → `testimonials`), exibidas em `/avaliacoes` e na
+  Home.
+- 4 casos reais de "antes e depois" com texto já publicado e autorizado
+  (`lib/results-data.ts`), em uma nova página `/resultados` (as fotos
+  clínicas em si ainda precisam ser adicionadas como arquivos — ver nota
+  abaixo).
+- E-mail de contato real: `luisfrodriguesvieira@gmail.com` (já preenchido
+  em `lib/clinic-data.ts` → `contactEmail` e usado na política de
+  privacidade).
+- Telefone alternativo: `(21) 99951-0051` (`lib/clinic-data.ts` →
+  `altPhoneDisplay`, mostrado no Contato como canal secundário — o
+  WhatsApp principal seguiu sendo `(21) 96669-1006` para manter o NAP
+  consistente).
+
+Ainda restam pendentes (abrir `odontovieira.com.br` diretamente para
+confirmar): horário de funcionamento, tecnologias/equipamentos,
+formas de pagamento e convênios.
 
 ### Logomarca
 
@@ -79,16 +100,13 @@ Dr. Luis Vieira antes do lançamento:
 - Tipos específicos de prótese oferecidos (página
   `/tratamentos/protese-dentaria-teresopolis`).
 - CNPJ/razão social, se aplicável (política de privacidade).
-- E-mail de contato para exercício de direitos LGPD (política de privacidade).
 - Confirmar se `odontovieira.com.br` (`lib/site.ts` → `SITE_URL`) será
   mesmo o domínio do novo site ou se outro domínio será usado.
-- Fotos reais da clínica, do Dr. Luis Vieira e (com autorização) de
-  pacientes — atualmente todas as imagens são placeholders visuais
-  identificados como tal. Substituir por `next/image` ao inserir as fotos
-  reais para manter a otimização automática.
-- Depoimentos de pacientes com autorização explícita (`/avaliacoes`).
-- Casos de "antes e depois" com autorização explícita (seção removida do
-  site até que haja material autorizado).
+- Fotos reais da clínica, do Dr. Luis Vieira e dos casos em `/resultados`
+  — atualmente todas as imagens são placeholders visuais identificados
+  como tal. Substituir por `next/image` ao inserir as fotos reais para
+  manter a otimização automática.
+- Logomarca oficial em arquivo vetorial (ver seção "Logomarca" acima).
 
 ## Analytics
 

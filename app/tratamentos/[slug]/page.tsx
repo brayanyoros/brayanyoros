@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SectionHeading } from "@/components/SectionHeading";
 import { PlaceholderMedia } from "@/components/PlaceholderMedia";
@@ -6,6 +7,7 @@ import { FAQAccordion } from "@/components/FAQAccordion";
 import { ScheduleCTA, WhatsAppCTA } from "@/components/CTAButton";
 import { BreadcrumbSchema, FAQSchema, TreatmentSchema } from "@/components/StructuredData";
 import { clinic, treatments } from "@/lib/clinic-data";
+import { resultCases } from "@/lib/results-data";
 import { SITE_URL } from "@/lib/site";
 
 type Params = { slug: string };
@@ -43,6 +45,8 @@ export default async function TreatmentPage({
   const { slug } = await params;
   const treatment = treatments.find((t) => t.slug === slug);
   if (!treatment) notFound();
+
+  const relatedResults = resultCases.filter((c) => c.relatedTreatmentSlug === treatment.slug);
 
   return (
     <>
@@ -188,11 +192,27 @@ export default async function TreatmentPage({
         <h2 className="font-display text-2xl font-semibold text-ink sm:text-3xl">
           Resultados reais autorizados
         </h2>
-        <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-ink-soft">
-          Esta seção será atualizada com casos reais de pacientes que autorizarem
-          a divulgação de suas imagens. Nenhum resultado é prometido antes da
-          avaliação — cada caso tem características próprias.
-        </p>
+        {relatedResults.length > 0 ? (
+          <>
+            <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-ink-soft">
+              Casos reais de {treatment.shortName.toLowerCase()}, com autorização
+              dos pacientes para divulgação. Nenhum resultado é garantido — cada
+              caso tem características próprias.
+            </p>
+            <Link
+              href="/resultados"
+              className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-primary"
+            >
+              Ver casos de {treatment.shortName.toLowerCase()} →
+            </Link>
+          </>
+        ) : (
+          <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-ink-soft">
+            Esta seção será atualizada com casos reais de pacientes que autorizarem
+            a divulgação de suas imagens. Nenhum resultado é prometido antes da
+            avaliação — cada caso tem características próprias.
+          </p>
+        )}
       </section>
 
       {/* FAQ */}

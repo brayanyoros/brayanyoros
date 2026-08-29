@@ -43,6 +43,14 @@ export default function ContatoPage() {
                 </WhatsAppCTA>
                 <PhoneCTA location="contato_sidebar" className="justify-center" />
               </div>
+              <p className="mt-4 text-sm text-ink-soft">
+                Outro telefone: {clinic.altPhoneDisplay}
+                <br />
+                E-mail:{" "}
+                <a href={`mailto:${clinic.contactEmail}`} className="underline underline-offset-2">
+                  {clinic.contactEmail}
+                </a>
+              </p>
             </div>
 
             <div className="rounded-2xl border border-line bg-white/60 p-6">
