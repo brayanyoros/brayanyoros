@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { ScheduleCTA, WhatsAppCTA } from "@/components/CTAButton";
+import { assetPath } from "@/lib/site";
 
 const navItems = [
   { href: "/", label: "Início" },
@@ -30,7 +31,7 @@ export function Header() {
       <div className="container-page flex h-16 items-center justify-between sm:h-20">
         <Link href="/" className="flex items-center">
           <Image
-            src="/images/logo-vieira.png"
+            src={assetPath("/images/logo-vieira.png")}
             alt="Vieira Odontologia"
             width={220}
             height={127}

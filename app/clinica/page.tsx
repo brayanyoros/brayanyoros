@@ -4,6 +4,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { ScheduleCTA, WhatsAppCTA } from "@/components/CTAButton";
 import { BreadcrumbSchema } from "@/components/StructuredData";
 import { clinic, trustBarItems } from "@/lib/clinic-data";
+import { assetPath } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "A Clínica",
@@ -42,7 +43,7 @@ export default function ClinicaPage() {
             </div>
           </div>
           <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
-            <Image src="/images/clinica-recepcao-1.jpg" alt="Recepção da Vieira Odontologia" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+            <Image src={assetPath("/images/clinica-recepcao-1.jpg")} alt="Recepção da Vieira Odontologia" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
           </div>
         </div>
       </section>
@@ -50,7 +51,7 @@ export default function ClinicaPage() {
       <section className="bg-cream-dark/50 py-16 sm:py-24">
         <div className="container-page grid gap-12 lg:grid-cols-2 lg:items-center">
           <div className="relative order-2 aspect-[4/5] overflow-hidden rounded-2xl lg:order-1">
-            <Image src="/images/clinica-recepcao-2.jpg" alt="Recepção do edifício" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+            <Image src={assetPath("/images/clinica-recepcao-2.jpg")} alt="Recepção do edifício" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
           </div>
           <div className="order-1 lg:order-2">
             <SectionHeading
@@ -93,13 +94,13 @@ export default function ClinicaPage() {
           />
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             <div className="relative aspect-square overflow-hidden rounded-2xl">
-              <Image src="/images/consultorio-1.jpg" alt="Consultório" fill sizes="(min-width: 1024px) 33vw, 50vw" className="object-cover" />
+              <Image src={assetPath("/images/consultorio-1.jpg")} alt="Consultório" fill sizes="(min-width: 1024px) 33vw, 50vw" className="object-cover" />
             </div>
             <div className="relative aspect-square overflow-hidden rounded-2xl">
-              <Image src="/images/clinica-recepcao-1.jpg" alt="Recepção" fill sizes="(min-width: 1024px) 33vw, 50vw" className="object-cover" />
+              <Image src={assetPath("/images/clinica-recepcao-1.jpg")} alt="Recepção" fill sizes="(min-width: 1024px) 33vw, 50vw" className="object-cover" />
             </div>
             <div className="relative aspect-square overflow-hidden rounded-2xl">
-              <Image src="/images/clinica-recepcao-2.jpg" alt="Ambiente da clínica" fill sizes="(min-width: 1024px) 33vw, 50vw" className="object-cover" />
+              <Image src={assetPath("/images/clinica-recepcao-2.jpg")} alt="Ambiente da clínica" fill sizes="(min-width: 1024px) 33vw, 50vw" className="object-cover" />
             </div>
           </div>
         </div>

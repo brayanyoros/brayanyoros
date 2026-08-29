@@ -8,6 +8,7 @@ import { Reveal } from "@/components/Reveal";
 import { trackEvent } from "@/lib/analytics";
 import { clinic, treatments, testimonials } from "@/lib/clinic-data";
 import { resultCases } from "@/lib/results-data";
+import { assetPath } from "@/lib/site";
 
 const navLinks = [
   { href: "#experiencia", label: "A Clínica" },
@@ -85,7 +86,7 @@ export function HomeExperience() {
       >
         <Link href="/" className="flex items-center">
           <Image
-            src="/images/logo-vieira.png"
+            src={assetPath("/images/logo-vieira.png")}
             alt="Vieira Odontologia"
             width={220}
             height={127}
@@ -175,7 +176,7 @@ export function HomeExperience() {
       <section className="relative h-[92svh] overflow-hidden bg-primary lg:h-screen">
         <div className="absolute inset-y-0 right-0 w-full overflow-hidden lg:w-[60%]">
           <Image
-            src="/images/dr-luis.webp"
+            src={assetPath("/images/dr-luis.webp")}
             alt="Dr. Luis Vieira"
             fill
             priority
@@ -347,7 +348,7 @@ export function HomeExperience() {
       <section id="dr-luis" className="flex flex-col items-start gap-10 bg-cream px-6 py-[88px] lg:flex-row lg:gap-24 lg:px-20 lg:py-40">
         <div className="relative aspect-[4/5] w-full shrink-0 overflow-hidden lg:w-[40%]">
           <Image
-            src="/images/dr-luis.webp"
+            src={assetPath("/images/dr-luis.webp")}
             alt="Dr. Luis Vieira"
             fill
             sizes="(min-width: 1024px) 40vw, 100vw"
@@ -472,13 +473,13 @@ export function HomeExperience() {
         </Reveal>
         <div className="mt-16 grid grid-cols-1 gap-4 lg:grid-cols-3">
           <div className="relative aspect-[9/16] overflow-hidden">
-            <Image src="/images/consultorio-1.jpg" alt="Consultório" fill sizes="(min-width: 1024px) 33vw, 100vw" className="object-cover" />
+            <Image src={assetPath("/images/consultorio-1.jpg")} alt="Consultório" fill sizes="(min-width: 1024px) 33vw, 100vw" className="object-cover" />
           </div>
           <div className="relative aspect-[9/16] overflow-hidden">
-            <Image src="/images/clinica-recepcao-1.jpg" alt="Recepção" fill sizes="(min-width: 1024px) 33vw, 100vw" className="object-cover" />
+            <Image src={assetPath("/images/clinica-recepcao-1.jpg")} alt="Recepção" fill sizes="(min-width: 1024px) 33vw, 100vw" className="object-cover" />
           </div>
           <div className="relative aspect-[9/16] overflow-hidden">
-            <Image src="/images/clinica-recepcao-2.jpg" alt="Recepção do edifício" fill sizes="(min-width: 1024px) 33vw, 100vw" className="object-cover" />
+            <Image src={assetPath("/images/clinica-recepcao-2.jpg")} alt="Recepção do edifício" fill sizes="(min-width: 1024px) 33vw, 100vw" className="object-cover" />
           </div>
         </div>
         <Link href="/clinica" className="mt-8 inline-block text-sm font-semibold text-ink underline underline-offset-4">
@@ -596,7 +597,7 @@ export function HomeExperience() {
 
       {/* FOOTER */}
       <footer className="bg-cream px-6 pb-8 pt-16 lg:px-20 lg:pb-10 lg:pt-24">
-        <Image src="/images/logo-vieira.png" alt="Vieira Odontologia" width={220} height={127} className="h-10 w-auto" />
+        <Image src={assetPath("/images/logo-vieira.png")} alt="Vieira Odontologia" width={220} height={127} className="h-10 w-auto" />
         <div className="mt-16 grid grid-cols-2 gap-8 lg:grid-cols-4 lg:gap-10">
           <div>
             <div className="mb-4 text-[11px] tracking-[1.5px] text-ink-soft">NAVEGAÇÃO</div>

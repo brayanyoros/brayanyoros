@@ -4,6 +4,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { ScheduleCTA, WhatsAppCTA } from "@/components/CTAButton";
 import { BreadcrumbSchema } from "@/components/StructuredData";
 import { teamMembers } from "@/lib/clinic-data";
+import { assetPath } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Equipe",
@@ -34,7 +35,7 @@ export default function EquipePage() {
             <article key={member.name} className="grid gap-10 lg:grid-cols-2 lg:items-start">
               <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
                 <Image
-                  src={member.photo}
+                  src={assetPath(member.photo)}
                   alt={member.name}
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"
