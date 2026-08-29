@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+:root {
+  --color-cream: #f8f5ef;
+  --color-cream-dark: #efe9de;
+  --color-ink: #17231f;
+  --color-ink-soft: #3d4a45;
+  --color-primary: #12433e;
+  --color-primary-light: #1e5c55;
+  --color-primary-dark: #0b2c28;
+  --color-accent: #b3893f;
+  --color-accent-light: #d9b877;
+  --color-line: #e2dbcb;
+  --color-whatsapp: #25d366;
+}
+
+@theme inline {
+  --color-cream: var(--color-cream);
+  --color-cream-dark: var(--color-cream-dark);
+  --color-ink: var(--color-ink);
+  --color-ink-soft: var(--color-ink-soft);
+  --color-primary: var(--color-primary);
+  --color-primary-light: var(--color-primary-light);
+  --color-primary-dark: var(--color-primary-dark);
+  --color-accent: var(--color-accent);
+  --color-accent-light: var(--color-accent-light);
+  --color-line: var(--color-line);
+  --color-whatsapp: var(--color-whatsapp);
+  --font-display: var(--font-fraunces);
+  --font-sans: var(--font-inter);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+}
+
+::selection {
+  background: var(--color-accent-light);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.container-page {
+  max-width: 76rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .container-page {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
