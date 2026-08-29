@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { clinic, treatments } from "@/lib/clinic-data";
 import { trackEvent } from "@/lib/analytics";
@@ -114,9 +115,9 @@ export function ContactForm() {
         />
         <label htmlFor="consent" className="text-sm text-ink-soft">
           Autorizo o contato pelo WhatsApp informado e li a{" "}
-          <a href="/politica-de-privacidade" className="underline underline-offset-2">
+          <Link href="/politica-de-privacidade" className="underline underline-offset-2">
             Política de Privacidade
-          </a>
+          </Link>
           .
         </label>
       </div>

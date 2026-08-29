@@ -12,12 +12,42 @@ npm run dev
 
 Acesse [http://localhost:3000](http://localhost:3000).
 
-Build de produção:
+Build de produção (gera o site estático em `out/`):
 
 ```bash
 npm run build
 npm run start
 ```
+
+`npm run start` serve a pasta `out/` como arquivos estáticos (o projeto
+usa `output: "export"` — não há servidor Node em produção).
+
+## Deploy — GitHub Pages
+
+O site já vem pronto para publicar em `https://<usuário>.github.io/<repo>/`
+de graça, sem precisar de conta em outro serviço:
+
+1. No GitHub, vá em **Settings → Pages** do repositório.
+2. Em **Source**, selecione **GitHub Actions**.
+3. Pronto — o workflow `.github/workflows/deploy-pages.yml` builda e
+   publica automaticamente a cada push na `main`. Acompanhe o progresso
+   na aba **Actions**; a URL final aparece lá quando terminar.
+
+Esse é o único passo manual: habilitar a origem "GitHub Actions" nas
+configurações do repositório é uma permissão de administrador que não é
+possível ligar por API.
+
+`next.config.ts` ajusta `basePath`/`assetPrefix` automaticamente quando a
+variável de ambiente `GITHUB_PAGES=true` está definida (é isso que o
+workflow faz) — localmente (`npm run dev`/`npm run build` sem essa
+variável) o site continua funcionando normalmente na raiz. Enquanto o
+site estiver nesse domínio de prévia, `app/robots.ts` bloqueia indexação
+por mecanismos de busca automaticamente, para não competir com o domínio
+definitivo quando ele existir.
+
+Se no futuro quiser trocar para um domínio próprio ou outra hospedagem
+(Vercel, Netlify etc.), basta remover `output: "export"` de
+`next.config.ts` — o restante do projeto não depende dessa configuração.
 
 ## Identidade visual (Claude Design)
 
@@ -156,7 +186,4 @@ Os eventos `click_whatsapp`, `click_phone`, `click_schedule`,
 variável de ambiente `NEXT_PUBLIC_GA_ID` com o ID de medição (ex.:
 `G-XXXXXXX`) — o script só é carregado quando essa variável existe.
 
-## Deploy
-
-Projeto pronto para deploy na Vercel ou qualquer host compatível com
-Next.js (build estático de todas as rotas, incluindo tratamentos e blog).
+Ver a seção "Deploy — GitHub Pages" acima para publicar o site.

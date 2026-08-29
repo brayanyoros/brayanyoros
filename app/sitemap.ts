@@ -3,6 +3,8 @@ import { treatments } from "@/lib/clinic-data";
 import { blogPosts } from "@/lib/blog-data";
 import { SITE_URL } from "@/lib/site";
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     "",
