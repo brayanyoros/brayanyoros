@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { SectionHeading } from "@/components/SectionHeading";
-import { PlaceholderMedia } from "@/components/PlaceholderMedia";
 import { ScheduleCTA, WhatsAppCTA } from "@/components/CTAButton";
 import { BreadcrumbSchema } from "@/components/StructuredData";
 import { clinic, trustBarItems } from "@/lib/clinic-data";
@@ -41,13 +41,17 @@ export default function ClinicaPage() {
               <WhatsAppCTA location="clinica_hero">Falar no WhatsApp</WhatsAppCTA>
             </div>
           </div>
-          <PlaceholderMedia label="Foto real da fachada / recepção — a inserir" ratio="aspect-[4/5]" />
+          <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
+            <Image src="/images/clinica-recepcao-1.jpg" alt="Recepção da Vieira Odontologia" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+          </div>
         </div>
       </section>
 
       <section className="bg-cream-dark/50 py-16 sm:py-24">
         <div className="container-page grid gap-12 lg:grid-cols-2 lg:items-center">
-          <PlaceholderMedia label="Foto histórica ou atual da clínica — a inserir" ratio="aspect-[4/5]" tone="cream" className="order-2 lg:order-1" />
+          <div className="relative order-2 aspect-[4/5] overflow-hidden rounded-2xl lg:order-1">
+            <Image src="/images/clinica-recepcao-2.jpg" alt="Recepção do edifício" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+          </div>
           <div className="order-1 lg:order-2">
             <SectionHeading
               eyebrow="Nossa história"
@@ -87,11 +91,16 @@ export default function ClinicaPage() {
             title="Odontologia de excelência começa pela experiência."
             description="Um espaço pensado para reduzir a insegurança de quem visita o dentista, sem parecer um ambiente hospitalar."
           />
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            <PlaceholderMedia label="Recepção — foto real a inserir" ratio="aspect-square" tone="cream" />
-            <PlaceholderMedia label="Consultório — foto real a inserir" ratio="aspect-square" tone="cream" />
-            <PlaceholderMedia label="Equipamentos — foto real a inserir" ratio="aspect-square" tone="cream" />
-            <PlaceholderMedia label="Detalhe do espaço — foto real a inserir" ratio="aspect-square" tone="cream" />
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="relative aspect-square overflow-hidden rounded-2xl">
+              <Image src="/images/consultorio-1.jpg" alt="Consultório" fill sizes="(min-width: 1024px) 33vw, 50vw" className="object-cover" />
+            </div>
+            <div className="relative aspect-square overflow-hidden rounded-2xl">
+              <Image src="/images/clinica-recepcao-1.jpg" alt="Recepção" fill sizes="(min-width: 1024px) 33vw, 50vw" className="object-cover" />
+            </div>
+            <div className="relative aspect-square overflow-hidden rounded-2xl">
+              <Image src="/images/clinica-recepcao-2.jpg" alt="Ambiente da clínica" fill sizes="(min-width: 1024px) 33vw, 50vw" className="object-cover" />
+            </div>
           </div>
         </div>
       </section>

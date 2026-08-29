@@ -244,6 +244,7 @@ export const teamMembers = [
     name: "Dr. Luis Rodrigues Vieira",
     role: "Cirurgião-dentista responsável técnico",
     cro: "CRO-RJ 55611",
+    photo: "/images/dr-luis.webp",
     education: [
       "Técnico em Prótese Dentária",
       "Graduação em Odontologia pela UNIFESO",

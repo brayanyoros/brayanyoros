@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -27,13 +28,15 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-line/70 bg-cream/90 backdrop-blur">
       <div className="container-page flex h-16 items-center justify-between sm:h-20">
-        <Link href="/" className="flex items-baseline gap-2 leading-none">
-          <span className="font-display text-xl font-semibold uppercase tracking-[0.08em] text-primary sm:text-2xl">
-            Vieira
-          </span>
-          <span className="hidden text-xs font-medium uppercase tracking-[0.2em] text-ink-soft sm:inline">
-            Odontologia
-          </span>
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/images/logo-vieira.png"
+            alt="Vieira Odontologia"
+            width={220}
+            height={127}
+            className="h-9 w-auto sm:h-10"
+            priority
+          />
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Navegação principal">

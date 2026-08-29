@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { PlaceholderMedia } from "@/components/PlaceholderMedia";
@@ -82,9 +83,16 @@ export function HomeExperience() {
         }}
         className="fixed inset-x-0 top-0 z-[100] flex h-[84px] items-center justify-between px-6 transition-all duration-[400ms] lg:h-24 lg:px-14"
       >
-        <Link href="/" className="flex items-baseline gap-2 leading-none" style={{ color: headerTextColor }}>
-          <span className="font-display text-2xl tracking-[0.04em]">VIEIRA</span>
-          <span className="hidden text-[10px] tracking-[2px] opacity-70 sm:inline">ODONTOLOGIA</span>
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/images/logo-vieira.png"
+            alt="Vieira Odontologia"
+            width={220}
+            height={127}
+            priority
+            className="h-9 w-auto transition-[filter] duration-[400ms] sm:h-10"
+            style={{ filter: scrolled ? "none" : "brightness(0) invert(1)" }}
+          />
         </Link>
 
         <nav className="hidden items-center gap-9 lg:flex">
@@ -166,12 +174,14 @@ export function HomeExperience() {
       {/* HERO */}
       <section className="relative h-[92svh] overflow-hidden bg-primary lg:h-screen">
         <div className="absolute inset-y-0 right-0 w-full overflow-hidden lg:w-[60%]">
-          <PlaceholderMedia
-            label="Foto real — Dr. Luis Vieira (a inserir)"
-            tone="primary"
-            rounded={false}
-            ratio=""
-            className="h-full w-full !aspect-auto animate-[vaSlowZoom_24s_ease-in-out_infinite_alternate]"
+          <Image
+            src="/images/dr-luis.webp"
+            alt="Dr. Luis Vieira"
+            fill
+            priority
+            sizes="(min-width: 1024px) 60vw, 100vw"
+            className="object-cover animate-[vaSlowZoom_24s_ease-in-out_infinite_alternate]"
+            style={{ objectPosition: "center 15%" }}
           />
           <div
             className="absolute inset-0"
@@ -335,8 +345,15 @@ export function HomeExperience() {
 
       {/* DR. LUIS */}
       <section id="dr-luis" className="flex flex-col items-start gap-10 bg-cream px-6 py-[88px] lg:flex-row lg:gap-24 lg:px-20 lg:py-40">
-        <div className="aspect-[4/5] w-full shrink-0 overflow-hidden lg:w-[40%]">
-          <PlaceholderMedia label="Foto real — Dr. Luis Vieira (a inserir)" tone="primary" rounded={false} ratio="h-full w-full" />
+        <div className="relative aspect-[4/5] w-full shrink-0 overflow-hidden lg:w-[40%]">
+          <Image
+            src="/images/dr-luis.webp"
+            alt="Dr. Luis Vieira"
+            fill
+            sizes="(min-width: 1024px) 40vw, 100vw"
+            className="object-cover"
+            style={{ objectPosition: "center 12%" }}
+          />
         </div>
         <div className="w-full lg:w-[60%]">
           <Reveal>
@@ -454,9 +471,15 @@ export function HomeExperience() {
           </h2>
         </Reveal>
         <div className="mt-16 grid grid-cols-1 gap-4 lg:grid-cols-3">
-          <PlaceholderMedia label="Foto real — consultório (a inserir)" tone="cream" rounded={false} ratio="aspect-[9/16]" />
-          <PlaceholderMedia label="Foto real — sala de espera (a inserir)" tone="cream" rounded={false} ratio="aspect-[9/16]" />
-          <PlaceholderMedia label="Foto real — recepção do edifício (a inserir)" tone="cream" rounded={false} ratio="aspect-[9/16]" />
+          <div className="relative aspect-[9/16] overflow-hidden">
+            <Image src="/images/consultorio-1.jpg" alt="Consultório" fill sizes="(min-width: 1024px) 33vw, 100vw" className="object-cover" />
+          </div>
+          <div className="relative aspect-[9/16] overflow-hidden">
+            <Image src="/images/clinica-recepcao-1.jpg" alt="Recepção" fill sizes="(min-width: 1024px) 33vw, 100vw" className="object-cover" />
+          </div>
+          <div className="relative aspect-[9/16] overflow-hidden">
+            <Image src="/images/clinica-recepcao-2.jpg" alt="Recepção do edifício" fill sizes="(min-width: 1024px) 33vw, 100vw" className="object-cover" />
+          </div>
         </div>
         <Link href="/clinica" className="mt-8 inline-block text-sm font-semibold text-ink underline underline-offset-4">
           Conhecer a clínica →
@@ -573,7 +596,7 @@ export function HomeExperience() {
 
       {/* FOOTER */}
       <footer className="bg-cream px-6 pb-8 pt-16 lg:px-20 lg:pb-10 lg:pt-24">
-        <span className="font-display text-2xl tracking-[0.04em] text-ink">VIEIRA</span>
+        <Image src="/images/logo-vieira.png" alt="Vieira Odontologia" width={220} height={127} className="h-10 w-auto" />
         <div className="mt-16 grid grid-cols-2 gap-8 lg:grid-cols-4 lg:gap-10">
           <div>
             <div className="mb-4 text-[11px] tracking-[1.5px] text-ink-soft">NAVEGAÇÃO</div>

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { SectionHeading } from "@/components/SectionHeading";
-import { PlaceholderMedia } from "@/components/PlaceholderMedia";
 import { ScheduleCTA, WhatsAppCTA } from "@/components/CTAButton";
 import { BreadcrumbSchema } from "@/components/StructuredData";
 import { teamMembers } from "@/lib/clinic-data";
@@ -32,7 +32,16 @@ export default function EquipePage() {
         <div className="mt-12 space-y-16">
           {teamMembers.map((member) => (
             <article key={member.name} className="grid gap-10 lg:grid-cols-2 lg:items-start">
-              <PlaceholderMedia label={`Foto profissional real — ${member.name}`} ratio="aspect-[4/5]" />
+              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
+                <Image
+                  src={member.photo}
+                  alt={member.name}
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover"
+                  style={{ objectPosition: "center 15%" }}
+                />
+              </div>
               <div>
                 <h2 className="font-display text-3xl font-semibold text-ink">{member.name}</h2>
                 <p className="mt-1 text-[15px] font-medium text-primary">
