@@ -1,16 +1,19 @@
 @import "tailwindcss";
 
 :root {
-  --color-cream: #f8f5ef;
-  --color-cream-dark: #efe9de;
-  --color-ink: #17231f;
-  --color-ink-soft: #3d4a45;
-  --color-primary: #12433e;
-  --color-primary-light: #1e5c55;
-  --color-primary-dark: #0b2c28;
-  --color-accent: #b3893f;
-  --color-accent-light: #d9b877;
-  --color-line: #e2dbcb;
+  /* Paleta e tipografia definidas no canvas visual (Claude Design) do
+     cliente para a Home — aplicadas aqui como tokens globais para que o
+     restante do site herde a mesma identidade. */
+  --color-cream: #f7f5f0;
+  --color-cream-dark: #efece5;
+  --color-ink: #171717;
+  --color-ink-soft: #66635e;
+  --color-primary: #14140f;
+  --color-primary-light: #2a2a24;
+  --color-primary-dark: #0a0a08;
+  --color-accent: #c9a24b;
+  --color-accent-light: #ddbf7c;
+  --color-line: #dddad1;
   --color-whatsapp: #25d366;
 }
 
@@ -26,12 +29,24 @@
   --color-accent-light: var(--color-accent-light);
   --color-line: var(--color-line);
   --color-whatsapp: var(--color-whatsapp);
-  --font-display: var(--font-fraunces);
-  --font-sans: var(--font-inter);
+  --font-display: var(--font-instrument-serif);
+  --font-sans: var(--font-manrope);
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+@keyframes vaSlowZoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.09); }
+}
+
+@keyframes vaScrollLine {
+  0% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  51% { transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
 }
 
 body {

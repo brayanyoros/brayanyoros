@@ -19,6 +19,46 @@ npm run build
 npm run start
 ```
 
+## Identidade visual (Claude Design)
+
+A Home foi redesenhada a partir de um canvas visual (`.dc.html`) que o
+cliente criou no Claude Design e enviou nesta sessão. Esse arquivo definia
+uma Home em página única, editorial, com paleta ink/ivory/dourado e as
+fontes Instrument Serif + Manrope. Ele foi portado integralmente para
+React/Tailwind:
+
+- `components/HomeExperience.tsx` — a Home completa (hero, manifesto,
+  tratamentos com painel de imagem interativo, casos antes/depois,
+  depoimentos, FAQ, CTA final, rodapé e WhatsApp flutuante), com todo o
+  conteúdo dinâmico (tratamentos, casos, avaliações) vindo dos dados reais
+  em `lib/clinic-data.ts` e `lib/results-data.ts` em vez de texto fixo.
+- `components/Reveal.tsx` — animação de entrada ao rolar a página
+  (equivalente ao `IntersectionObserver` do canvas original).
+- `app/globals.css` — tokens de cor (`--color-ink`, `--color-cream`,
+  `--color-primary` etc.) e as keyframes `vaSlowZoom`/`vaScrollLine`
+  atualizados para a nova paleta, herdados por **todo o site** — por isso
+  as páginas internas (`/tratamentos`, `/equipe` etc.) também mudaram de
+  visual, mesmo sem terem sido redesenhadas individualmente.
+- `app/layout.tsx` — trocou as fontes Fraunces/Inter por Instrument
+  Serif/Manrope, conforme o canvas.
+- `components/Header.tsx`, `Footer.tsx` e `WhatsAppFloat.tsx` agora se
+  auto-ocultam na rota `/`, já que a Home tem seu próprio cabeçalho
+  (transparente sobre o hero, com transição ao rolar), rodapé e botão de
+  WhatsApp definidos dentro de `HomeExperience.tsx`.
+
+A Home do canvas era uma página única com âncoras internas (`#tratamentos`,
+`#casos` etc.) — mantive esse comportamento, mas linkei pontos-chave
+(nomes de tratamentos, "conheça minha trajetória", "ver todos os casos")
+para as páginas internas reais (`/tratamentos/[slug]`, `/equipe`,
+`/resultados`), preservando a arquitetura de SEO com URLs individuais por
+tratamento que o site já tinha antes do redesign.
+
+**Pendente:** o canvas referenciava imagens (`assets/dr-luis.jpg`,
+`assets/logo-vieira.png` etc.) que não existiam como arquivos reais —
+apenas caminhos de exemplo do Claude Design. Todas continuam como
+placeholders visuais claramente identificados (ver seção de pendências
+abaixo).
+
 ## Estrutura
 
 - `lib/clinic-data.ts` — fonte única de verdade para nome, endereço,

@@ -2,11 +2,15 @@ export function PlaceholderMedia({
   label,
   ratio = "aspect-[4/5]",
   tone = "primary",
+  rounded = true,
+  showLabel = true,
   className = "",
 }: {
   label: string;
   ratio?: string;
   tone?: "primary" | "cream";
+  rounded?: boolean;
+  showLabel?: boolean;
   className?: string;
 }) {
   const toneClasses =
@@ -16,7 +20,7 @@ export function PlaceholderMedia({
 
   return (
     <div
-      className={`relative overflow-hidden rounded-2xl ${ratio} ${toneClasses} ${className}`}
+      className={`relative overflow-hidden ${rounded ? "rounded-2xl" : ""} ${ratio} ${toneClasses} ${className}`}
       role="img"
       aria-label={label}
     >
@@ -30,9 +34,11 @@ export function PlaceholderMedia({
           fill="currentColor"
         />
       </svg>
-      <div className="absolute inset-0 flex items-end p-4">
-        <p className="text-xs font-medium uppercase tracking-wider">{label}</p>
-      </div>
+      {showLabel && (
+        <div className="absolute inset-0 flex items-end p-4">
+          <p className="text-xs font-medium uppercase tracking-wider">{label}</p>
+        </div>
+      )}
     </div>
   );
 }

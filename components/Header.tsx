@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { ScheduleCTA, WhatsAppCTA } from "@/components/CTAButton";
 
@@ -17,6 +18,11 @@ const navItems = [
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+
+  // A Home tem cabeçalho próprio (transparente sobre o hero, com
+  // transição ao rolar), definido em components/HomeExperience.tsx.
+  if (pathname === "/") return null;
 
   return (
     <header className="sticky top-0 z-50 border-b border-line/70 bg-cream/90 backdrop-blur">

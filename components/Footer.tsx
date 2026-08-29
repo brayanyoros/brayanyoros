@@ -1,9 +1,17 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { clinic, treatments } from "@/lib/clinic-data";
 import { ScheduleCTA } from "@/components/CTAButton";
 import { TrackedExternalLink } from "@/components/TrackedLink";
 
 export function Footer() {
+  const pathname = usePathname();
+
+  // A Home tem rodapé próprio, definido em components/HomeExperience.tsx.
+  if (pathname === "/") return null;
+
   return (
     <footer className="border-t border-line bg-primary-dark text-cream/90">
       <div className="container-page py-16">

@@ -1,10 +1,16 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { clinic } from "@/lib/clinic-data";
 import { trackEvent } from "@/lib/analytics";
 
 export function WhatsAppFloat() {
+  const pathname = usePathname();
   const href = `${clinic.whatsappUrl}?text=${encodeURIComponent(clinic.whatsappDefaultMessage)}`;
+
+  // A Home tem seu próprio botão flutuante de WhatsApp (lateral no
+  // desktop, barra fixa no mobile), definido em HomeExperience.tsx.
+  if (pathname === "/") return null;
 
   return (
     <a

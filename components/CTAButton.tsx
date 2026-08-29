@@ -7,12 +7,9 @@ import { clinic } from "@/lib/clinic-data";
 type Variant = "primary" | "secondary" | "ghost";
 
 const styles: Record<Variant, string> = {
-  primary:
-    "bg-primary text-cream hover:bg-primary-light shadow-sm shadow-primary-dark/20",
-  secondary:
-    "bg-whatsapp text-white hover:brightness-95",
-  ghost:
-    "bg-transparent text-primary border border-primary/30 hover:bg-primary/5",
+  primary: "border border-primary bg-primary text-cream hover:bg-transparent hover:text-primary",
+  secondary: "bg-whatsapp text-white hover:brightness-95",
+  ghost: "bg-transparent text-primary border border-primary/30 hover:bg-primary/5",
 };
 
 export function ScheduleCTA({
@@ -30,7 +27,7 @@ export function ScheduleCTA({
     <Link
       href="/contato"
       onClick={() => trackEvent("click_schedule", { location })}
-      className={`inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-[15px] font-medium tracking-wide transition-colors duration-200 ${styles[variant]} ${className}`}
+      className={`inline-flex items-center justify-center gap-2 px-6 py-3.5 text-[13px] font-semibold uppercase tracking-[1.2px] transition-colors duration-300 ${styles[variant]} ${className}`}
     >
       {children}
     </Link>
@@ -59,7 +56,7 @@ export function WhatsAppCTA({
       target="_blank"
       rel="noopener noreferrer"
       onClick={() => trackEvent("click_whatsapp", { location })}
-      className={`inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-[15px] font-medium tracking-wide transition-colors duration-200 ${styles[variant]} ${className}`}
+      className={`inline-flex items-center justify-center gap-2 px-6 py-3.5 text-[13px] font-semibold uppercase tracking-[1.2px] transition-colors duration-300 ${styles[variant]} ${className}`}
     >
       {children}
     </a>
