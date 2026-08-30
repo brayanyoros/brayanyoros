@@ -1,4 +1,4 @@
-import { clinic } from "@/lib/clinic-data";
+import { clinic, treatments } from "@/lib/clinic-data";
 import { SITE_URL } from "@/lib/site";
 
 export function OrganizationSchema() {
@@ -30,8 +30,26 @@ export function OrganizationSchema() {
       ratingValue: clinic.rating,
       reviewCount: clinic.reviewCount,
     },
-    sameAs: [clinic.dentist.instagramUrl],
+    // O Google usa sameAs para casar o site com a mesma entidade do Perfil
+    // da Empresa; sem a ficha do Maps aqui, os dois ficam soltos.
+    sameAs: [clinic.dentist.instagramUrl, clinic.googleMapsUrl],
     medicalSpecialty: "Dentistry",
+    areaServed: {
+      "@type": "City",
+      name: clinic.city,
+      containedInPlace: { "@type": "State", name: "Rio de Janeiro" },
+    },
+    availableService: treatments.map((t) => ({
+      "@type": "MedicalProcedure",
+      name: t.name,
+      url: `${SITE_URL}/tratamentos/${t.slug}`,
+    })),
+    founder: {
+      "@type": "Person",
+      name: clinic.dentist.fullName,
+      identifier: clinic.dentist.cro,
+      sameAs: clinic.dentist.instagramUrl,
+    },
   };
 
   return (

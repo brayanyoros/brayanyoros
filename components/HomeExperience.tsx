@@ -23,8 +23,9 @@ const treatmentLinks: { n: string; name: string; slug: string; panelPhoto?: stri
   // foto que o representa.
   { n: "01", name: "Clareamento Dental", slug: "clareamento-dental-teresopolis", panelPhoto: "/images/clareamento-depois-painel.png" },
   { n: "02", name: "Fechamento de Diastemas", slug: "fechamento-diastema-teresopolis", panelPhoto: "/images/diastema-depois-painel.png" },
-  { n: "03", name: "Restaurações Estéticas", slug: "restauracao-estetica-resina-teresopolis", panelPhoto: "/images/restauracao-incisivo-depois-painel.png" },
-  { n: "04", name: "Prótese Dentária", slug: "protese-dentaria-teresopolis" },
+  { n: "03", name: "Troca de Restaurações", slug: "troca-restauracoes-antigas-teresopolis", panelPhoto: "/images/carie-secundaria-depois.png" },
+  { n: "04", name: "Restaurações Estéticas", slug: "restauracao-estetica-resina-teresopolis", panelPhoto: "/images/restauracao-incisivo-depois-painel.png" },
+  { n: "05", name: "Prótese Dentária", slug: "protese-dentaria-teresopolis" },
 ];
 
 const caseMeta: Record<string, { title: string; subtitle: string }> = {
