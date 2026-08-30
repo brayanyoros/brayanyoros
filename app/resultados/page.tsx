@@ -83,6 +83,24 @@ export default function ResultadosPage() {
                       />
                     </>
                   )}
+                  {c.moreAngles && c.moreAngles.length > 0 && (
+                    <div className="col-span-2 grid grid-cols-4 gap-2">
+                      {c.moreAngles.map((a, i) => (
+                        <div key={i} className="relative aspect-square overflow-hidden rounded-xl">
+                          <Image
+                            src={assetPath(a.src)}
+                            alt={`${a.label} — ${c.title}`}
+                            fill
+                            sizes="(min-width: 1024px) 12vw, 22vw"
+                            className="object-cover"
+                          />
+                          <span className="absolute left-1.5 top-1.5 rounded-full bg-primary/80 px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wide text-cream">
+                            {a.label}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
                 <div>
                   <h2 className="font-display text-xl font-semibold text-ink sm:text-2xl">

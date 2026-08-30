@@ -10,6 +10,7 @@ export type ResultCase = {
   relatedTreatmentSlug: string;
   paragraphs: string[];
   images?: { before: string; after: string };
+  moreAngles?: { src: string; label: "Antes" | "Depois" }[];
 };
 
 export const resultCases: ResultCase[] = [
@@ -59,5 +60,11 @@ export const resultCases: ResultCase[] = [
       before: "/images/carie-secundaria-antes.png",
       after: "/images/carie-secundaria-depois.png",
     },
+    moreAngles: [
+      { src: "/images/carie-secundaria-antes-2.png", label: "Antes" },
+      { src: "/images/carie-secundaria-depois-2.png", label: "Depois" },
+      { src: "/images/carie-secundaria-antes-3.png", label: "Antes" },
+      { src: "/images/carie-secundaria-depois-3.png", label: "Depois" },
+    ],
   },
 ];
