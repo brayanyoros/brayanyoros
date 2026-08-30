@@ -18,17 +18,19 @@ const navLinks = [
   { href: "#contato-final", label: "Contato" },
 ];
 
-const treatmentLinks = [
-  { n: "01", name: "Clareamento Dental", slug: "clareamento-dental-teresopolis", hasMatchingPhoto: true },
-  { n: "02", name: "Fechamento de Diastemas", slug: "restauracao-estetica-resina-teresopolis", hasMatchingPhoto: true },
-  { n: "03", name: "Restaurações Estéticas", slug: "restauracao-estetica-resina-teresopolis", hasMatchingPhoto: false },
-  { n: "04", name: "Prótese Dentária", slug: "protese-dentaria-teresopolis", hasMatchingPhoto: false },
-] as const;
+const treatmentLinks: { n: string; name: string; slug: string; panelPhoto?: string }[] = [
+  // panelPhoto: a foto que representa este item específico. Vários itens
+  // apontam para a mesma página de tratamento, então a foto não pode vir
+  // do slug — senão um caso de molar ilustra "diastema", por exemplo.
+  { n: "01", name: "Clareamento Dental", slug: "clareamento-dental-teresopolis", panelPhoto: "/images/clareamento-depois-painel.png" },
+  { n: "02", name: "Fechamento de Diastemas", slug: "restauracao-estetica-resina-teresopolis", panelPhoto: "/images/diastema-depois-painel.png" },
+  { n: "03", name: "Restaurações Estéticas", slug: "restauracao-estetica-resina-teresopolis" },
+  { n: "04", name: "Prótese Dentária", slug: "protese-dentaria-teresopolis" },
+];
 
 const caseMeta: Record<string, { title: string; subtitle: string }> = {
   "fechamento-diastema-resina-2-anos": { title: "FECHAMENTO DE DIASTEMA", subtitle: "Resina composta" },
-  "clareamento-troca-restauracao-incisivo-central": { title: "CLAREAMENTO DENTAL", subtitle: "Clareamento + troca de restauração" },
-  "clareamento-conjugado-troca-restauracao-incisivo-lateral": { title: "CLAREAMENTO CONJUGADO", subtitle: "Clareamento dental" },
+  "clareamento-troca-restauracao-incisivo-lateral": { title: "CLAREAMENTO DENTAL", subtitle: "Clareamento + troca de restauração" },
   "restauracao-estetica-incisivo-central": { title: "RESTAURAÇÃO ESTÉTICA", subtitle: "Resina composta" },
   "restauracoes-diretas-carie-secundaria-molares": { title: "TROCA POR CÁRIE SECUNDÁRIA", subtitle: "Resina composta" },
 };
@@ -72,9 +74,7 @@ export function HomeExperience() {
   const activeReviewData = testimonials[activeReview];
   const activeTreatmentData = treatments.find((t) => t.slug === treatmentLinks[activeTreatment].slug);
   const activeTreatmentIcon = activeTreatmentData?.icon ?? "tooth";
-  const activeTreatmentPhoto = treatmentLinks[activeTreatment].hasMatchingPhoto
-    ? activeTreatmentData?.photos?.panel
-    : undefined;
+  const activeTreatmentPhoto = treatmentLinks[activeTreatment].panelPhoto;
 
   return (
     <div style={{ fontFamily: "var(--font-sans)" }} className="relative overflow-x-hidden bg-cream text-ink">
