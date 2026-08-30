@@ -66,6 +66,7 @@ export type Treatment = {
   name: string;
   shortName: string;
   icon: "tooth" | "drop" | "crown";
+  photo?: string;
   metaTitle: string;
   metaDescription: string;
   problem: string;
@@ -140,6 +141,7 @@ export const treatments: Treatment[] = [
     name: "Restaurações Estéticas em Resina Composta",
     shortName: "Restaurações Estéticas",
     icon: "drop",
+    photo: "/images/carie-secundaria-depois.png",
     metaTitle: "Restaurações Estéticas em Resina Composta em Teresópolis | Vieira Odontologia",
     metaDescription:
       "Restaurações em resina composta, fechamento de diastemas, troca de restaurações antigas e reabilitação de dentes fraturados em Teresópolis, com o Dr. Luis Vieira (CRO-RJ 55611).",

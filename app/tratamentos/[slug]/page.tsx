@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -8,7 +9,7 @@ import { ScheduleCTA, WhatsAppCTA } from "@/components/CTAButton";
 import { BreadcrumbSchema, FAQSchema, TreatmentSchema } from "@/components/StructuredData";
 import { clinic, treatments } from "@/lib/clinic-data";
 import { resultCases } from "@/lib/results-data";
-import { SITE_URL } from "@/lib/site";
+import { assetPath, SITE_URL } from "@/lib/site";
 
 type Params = { slug: string };
 
@@ -84,7 +85,20 @@ export default async function TreatmentPage({
               </WhatsAppCTA>
             </div>
           </div>
-          <PlaceholderMedia label={`Foto real — ${treatment.shortName}`} ratio="aspect-[4/5]" icon={treatment.icon} />
+          {treatment.photo ? (
+            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
+              <Image
+                src={assetPath(treatment.photo)}
+                alt={`Foto real — ${treatment.shortName}`}
+                fill
+                sizes="(min-width: 1024px) 45vw, 100vw"
+                className="object-cover"
+                priority
+              />
+            </div>
+          ) : (
+            <PlaceholderMedia label={`Foto real — ${treatment.shortName}`} ratio="aspect-[4/5]" icon={treatment.icon} />
+          )}
         </div>
       </section>
 

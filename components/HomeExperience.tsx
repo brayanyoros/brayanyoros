@@ -72,8 +72,9 @@ export function HomeExperience() {
   const cases = resultCases.map((c) => ({ ...c, meta: caseMeta[c.slug] }));
   const activeCaseData = cases[activeCase];
   const activeReviewData = testimonials[activeReview];
-  const activeTreatmentIcon =
-    treatments.find((t) => t.slug === treatmentLinks[activeTreatment].slug)?.icon ?? "tooth";
+  const activeTreatmentData = treatments.find((t) => t.slug === treatmentLinks[activeTreatment].slug);
+  const activeTreatmentIcon = activeTreatmentData?.icon ?? "tooth";
+  const activeTreatmentPhoto = activeTreatmentData?.photo;
 
   return (
     <div style={{ fontFamily: "var(--font-sans)" }} className="relative overflow-x-hidden bg-cream text-ink">
@@ -260,22 +261,42 @@ export function HomeExperience() {
         </Reveal>
         <div className="mt-16 flex flex-col gap-0 lg:flex-row lg:gap-16">
           <div className="sticky top-[120px] hidden h-[540px] w-[44%] overflow-hidden lg:block">
-            <PlaceholderMedia
-              label={`Foto real — ${treatmentLinks[activeTreatment].name}`}
-              tone="cream"
-              rounded={false}
-              ratio="h-full w-full"
-              icon={activeTreatmentIcon}
-            />
+            {activeTreatmentPhoto ? (
+              <Image
+                src={assetPath(activeTreatmentPhoto)}
+                alt={`Foto real — ${treatmentLinks[activeTreatment].name}`}
+                fill
+                sizes="44vw"
+                className="object-cover"
+              />
+            ) : (
+              <PlaceholderMedia
+                label={`Foto real — ${treatmentLinks[activeTreatment].name}`}
+                tone="cream"
+                rounded={false}
+                ratio="h-full w-full"
+                icon={activeTreatmentIcon}
+              />
+            )}
           </div>
-          <div className="mb-6 block h-[260px] w-full overflow-hidden lg:hidden">
-            <PlaceholderMedia
-              label={`Foto real — ${treatmentLinks[activeTreatment].name}`}
-              tone="cream"
-              rounded={false}
-              ratio="h-full w-full"
-              icon={activeTreatmentIcon}
-            />
+          <div className="relative mb-6 block h-[260px] w-full overflow-hidden lg:hidden">
+            {activeTreatmentPhoto ? (
+              <Image
+                src={assetPath(activeTreatmentPhoto)}
+                alt={`Foto real — ${treatmentLinks[activeTreatment].name}`}
+                fill
+                sizes="100vw"
+                className="object-cover"
+              />
+            ) : (
+              <PlaceholderMedia
+                label={`Foto real — ${treatmentLinks[activeTreatment].name}`}
+                tone="cream"
+                rounded={false}
+                ratio="h-full w-full"
+                icon={activeTreatmentIcon}
+              />
+            )}
           </div>
           <div className="w-full lg:w-[56%]">
             {treatmentLinks.map((t, i) => (

@@ -1,16 +1,30 @@
+import Image from "next/image";
 import Link from "next/link";
 import { PlaceholderMedia } from "@/components/PlaceholderMedia";
 import type { Treatment } from "@/lib/clinic-data";
+import { assetPath } from "@/lib/site";
 
 export function TreatmentCard({ treatment }: { treatment: Treatment }) {
   return (
     <article className="group flex flex-col overflow-hidden rounded-2xl border border-line bg-white/60 transition-shadow hover:shadow-lg hover:shadow-primary/5">
-      <PlaceholderMedia
-        label={`Foto real — ${treatment.shortName}`}
-        ratio="aspect-[16/10]"
-        tone="cream"
-        icon={treatment.icon}
-      />
+      {treatment.photo ? (
+        <div className="relative aspect-[16/10] overflow-hidden">
+          <Image
+            src={assetPath(treatment.photo)}
+            alt={`Foto real — ${treatment.shortName}`}
+            fill
+            sizes="(min-width: 1024px) 33vw, 100vw"
+            className="object-cover"
+          />
+        </div>
+      ) : (
+        <PlaceholderMedia
+          label={`Foto real — ${treatment.shortName}`}
+          ratio="aspect-[16/10]"
+          tone="cream"
+          icon={treatment.icon}
+        />
+      )}
       <div className="flex flex-1 flex-col p-6">
         <h3 className="font-display text-xl font-semibold text-ink">{treatment.name}</h3>
         <p className="mt-2 text-sm text-ink-soft">
