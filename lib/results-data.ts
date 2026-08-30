@@ -22,7 +22,7 @@ const allCases: ResultCase[] = [
   {
     slug: "fechamento-diastema-resina-2-anos",
     title: "Fechamento de diastema (espaços) com resina composta — 2 anos de acompanhamento",
-    relatedTreatmentSlug: "restauracao-estetica-resina-teresopolis",
+    relatedTreatmentSlug: "fechamento-diastema-teresopolis",
     paragraphs: [
       "Paciente de 16 anos procurou atendimento após tratamento ortodôntico, ainda com a presença de um diastema na frente que não havia sido totalmente fechado pelo aparelho. A principal queixa era estética, e o caso foi encaminhado para reabilitação com resina composta direta.",
       "Optamos por uma abordagem conservadora, preservando a estrutura dental e buscando harmonia no sorriso. Dois anos após o procedimento, o resultado segue estável, com excelente integração estética e saúde gengival preservada.",

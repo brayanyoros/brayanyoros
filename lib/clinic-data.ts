@@ -144,6 +144,60 @@ export const treatments: Treatment[] = [
     ],
   },
   {
+    slug: "fechamento-diastema-teresopolis",
+    name: "Fechamento de Diastemas com Resina Composta",
+    shortName: "Fechamento de Diastemas",
+    icon: "drop",
+    photos: {
+      card: "/images/diastema-depois-card.png",
+      hero: "/images/diastema-depois-destaque.png",
+      panel: "/images/diastema-depois-painel.png",
+    },
+    metaTitle: "Fechamento de Diastemas em Teresópolis | Vieira Odontologia",
+    metaDescription:
+      "Fechamento de diastemas (espaços entre os dentes) com resina composta em Teresópolis, sem aparelho ortodôntico quando indicado, com o Dr. Luis Vieira (CRO-RJ 55611).",
+    problem: "Espaços visíveis entre os dentes da frente, que incomodam esteticamente.",
+    benefit: "Fechamento dos espaços com resina composta, preservando a estrutura do dente.",
+    summary:
+      "Fechamento de pequenos espaços entre os dentes com resina composta aplicada diretamente no consultório, planejado para manter a proporção natural do sorriso.",
+    whatIsIt:
+      "O diastema é o espaço que aparece entre dois dentes, mais perceptível na região da frente. Com resina composta, é possível fechá-lo diretamente no consultório, ajustando a forma e a largura dos dentes sem a necessidade de próteses de laboratório na maioria dos casos. O planejamento é feito caso a caso pelo Dr. Luis Vieira, buscando harmonia com os dentes vizinhos.",
+    indicatedFor: [
+      "Quem tem espaços entre os dentes (diastemas) e deseja fechá-los sem aparelho ortodôntico, quando clinicamente indicado.",
+      "Pacientes que concluíram tratamento ortodôntico e permaneceram com um espaço residual na frente.",
+    ],
+    solves: [
+      "Espaços entre os dentes (diastemas).",
+      "Desproporção de largura entre os dentes da frente.",
+    ],
+    howItWorks:
+      "O tratamento começa com uma avaliação clínica para confirmar se o fechamento com resina é a melhor indicação para o seu caso. O Dr. Luis Vieira planeja a forma, o volume e a cor da resina, buscando harmonia com os dentes vizinhos. A aplicação é feita em camadas, diretamente sobre o dente, com escultura e acabamento realizados na própria consulta.",
+    steps: [
+      { title: "Avaliação e diagnóstico", description: "Exame clínico para confirmar a indicação e medir a extensão do espaço." },
+      { title: "Planejamento estético", description: "Definição da forma, proporção e cor da resina de acordo com o restante do sorriso." },
+      { title: "Preparo do dente", description: "Limpeza e condicionamento da superfície que vai receber a resina." },
+      { title: "Aplicação da resina composta", description: "Fechamento do espaço em camadas, diretamente no consultório." },
+      { title: "Acabamento e polimento", description: "Ajuste de forma, textura e brilho para um resultado natural." },
+    ],
+    benefits: [
+      "Técnica direta, geralmente concluída em consultório.",
+      "Preserva a estrutura dentária saudável remanescente.",
+      "Permite ajustes de forma e harmonia ainda na mesma sessão.",
+    ],
+    limitations: [
+      "O fechamento de diastemas por resina nem sempre é a melhor indicação — em alguns casos, a avaliação pode apontar para tratamento ortodôntico associado.",
+      "A durabilidade da resina depende de fatores como hábitos, oclusão e manutenção periódica.",
+    ],
+    whoPerforms:
+      "O planejamento e a execução são realizados pelo Dr. Luis Rodrigues Vieira (CRO-RJ 55611).",
+    faqs: [
+      { question: "Fechar diastema com resina dói?", answer: "É um procedimento geralmente bem tolerado, podendo ser realizado com anestesia local quando necessário. Isso é avaliado caso a caso." },
+      { question: "Preciso usar aparelho para fechar o espaço?", answer: "Nem sempre. Em alguns casos a resina resolve sozinha; em outros, a avaliação pode apontar para tratamento ortodôntico associado. Isso é definido na consulta." },
+      { question: "O resultado dura quanto tempo?", answer: "A resina composta tem boa durabilidade, mas não é eterna — pode precisar de manutenção ou substituição ao longo dos anos, conforme o desgaste e os hábitos do paciente." },
+      { question: "Quanto custa o fechamento de diastema?", answer: "O valor depende do número de dentes e da complexidade do caso, definidos na avaliação." },
+    ],
+  },
+  {
     slug: "restauracao-estetica-resina-teresopolis",
     name: "Restaurações Estéticas em Resina Composta",
     shortName: "Restaurações Estéticas",
@@ -155,21 +209,20 @@ export const treatments: Treatment[] = [
     },
     metaTitle: "Restaurações Estéticas em Resina Composta em Teresópolis | Vieira Odontologia",
     metaDescription:
-      "Restaurações em resina composta, fechamento de diastemas, troca de restaurações antigas e reabilitação de dentes fraturados em Teresópolis, com o Dr. Luis Vieira (CRO-RJ 55611).",
-    problem: "Dentes fraturados, com espaços (diastemas) ou restaurações antigas desgastadas e escurecidas.",
+      "Troca de restaurações antigas e reabilitação de dentes fraturados com resina composta em Teresópolis, com o Dr. Luis Vieira (CRO-RJ 55611).",
+    problem: "Dentes fraturados ou restaurações antigas desgastadas, escurecidas e com infiltração.",
     benefit: "Recuperação da forma, função e harmonia do sorriso com técnica direta em resina composta.",
     summary:
-      "Um mesmo material — a resina composta — aplicado em diferentes situações: fechamento de diastemas, substituição de restaurações antigas e reconstrução de dentes fraturados.",
+      "Reconstrução de dentes fraturados e substituição de restaurações antigas com resina composta aplicada diretamente no consultório.",
     whatIsIt:
-      "A resina composta é um material estético usado para reconstruir ou modificar a forma dos dentes diretamente no consultório, sem a necessidade de próteses de laboratório na maioria dos casos. Na Vieira Odontologia, esse recurso é utilizado em diferentes indicações: fechar pequenos espaços entre os dentes (diastemas), substituir restaurações antigas que escureceram ou se desgastaram, e reconstruir dentes fraturados, sempre planejado caso a caso pelo Dr. Luis Vieira.",
+      "A resina composta é um material estético usado para reconstruir a forma dos dentes diretamente no consultório, sem a necessidade de próteses de laboratório na maioria dos casos. Na Vieira Odontologia, esse recurso é utilizado para substituir restaurações antigas que escureceram, se desgastaram ou sofreram infiltração, e para reconstruir dentes fraturados, sempre planejado caso a caso pelo Dr. Luis Vieira.",
     indicatedFor: [
-      "Quem tem espaços entre os dentes (diastemas) e deseja fechá-los sem aparelho ortodôntico, quando clinicamente indicado.",
       "Pacientes com restaurações antigas em resina ou amálgama, escurecidas, manchadas ou com infiltração.",
       "Pessoas com dentes fraturados por trauma, desgaste ou cáries extensas, que precisam recompor a estrutura dentária.",
     ],
     solves: [
-      "Espaços entre os dentes (diastemas).",
       "Restaurações antigas, escurecidas ou comprometidas.",
+      "Cárie secundária sob restaurações com infiltração marginal.",
       "Fraturas e perdas de estrutura dentária.",
     ],
     howItWorks:
@@ -189,12 +242,10 @@ export const treatments: Treatment[] = [
     limitations: [
       "A durabilidade da resina depende de fatores como hábitos, oclusão e manutenção periódica.",
       "Casos com perda extensa de estrutura podem exigir outras soluções, avaliadas individualmente.",
-      "O fechamento de diastemas por resina nem sempre é a melhor indicação — em alguns casos, a avaliação pode apontar para tratamento ortodôntico associado.",
     ],
     whoPerforms:
       "O planejamento e a execução são realizados pelo Dr. Luis Rodrigues Vieira (CRO-RJ 55611).",
     faqs: [
-      { question: "Fechar diastema com resina dói?", answer: "É um procedimento geralmente bem tolerado, podendo ser realizado com anestesia local quando necessário. Isso é avaliado caso a caso." },
       { question: "Restauração em resina composta é definitiva?", answer: "A resina composta tem boa durabilidade, mas não é eterna — pode precisar de manutenção ou substituição ao longo dos anos, conforme o desgaste e os hábitos do paciente." },
       { question: "É possível trocar uma restauração antiga sem prejudicar o dente?", answer: "Na maioria dos casos sim. O Dr. Luis Vieira avalia a extensão da restauração antiga antes de definir a melhor forma de substituição." },
       { question: "Quanto tempo leva para reabilitar um dente fraturado?", answer: "Depende da extensão da fratura e da técnica indicada. O prazo é definido após a avaliação clínica." },

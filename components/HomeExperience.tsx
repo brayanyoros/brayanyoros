@@ -19,11 +19,10 @@ const navLinks = [
 ];
 
 const treatmentLinks: { n: string; name: string; slug: string; panelPhoto?: string }[] = [
-  // panelPhoto: a foto que representa este item específico. Vários itens
-  // apontam para a mesma página de tratamento, então a foto não pode vir
-  // do slug — senão um caso de molar ilustra "diastema", por exemplo.
+  // Cada item aponta para sua própria página de tratamento e carrega a
+  // foto que o representa.
   { n: "01", name: "Clareamento Dental", slug: "clareamento-dental-teresopolis", panelPhoto: "/images/clareamento-depois-painel.png" },
-  { n: "02", name: "Fechamento de Diastemas", slug: "restauracao-estetica-resina-teresopolis", panelPhoto: "/images/diastema-depois-painel.png" },
+  { n: "02", name: "Fechamento de Diastemas", slug: "fechamento-diastema-teresopolis", panelPhoto: "/images/diastema-depois-painel.png" },
   { n: "03", name: "Restaurações Estéticas", slug: "restauracao-estetica-resina-teresopolis", panelPhoto: "/images/restauracao-incisivo-depois-painel.png" },
   { n: "04", name: "Prótese Dentária", slug: "protese-dentaria-teresopolis" },
 ];
