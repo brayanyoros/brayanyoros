@@ -89,13 +89,12 @@ export function HomeExperience() {
       >
         <Link href="/" className="flex items-center">
           <Image
-            src={assetPath("/images/logo-vieira.png")}
+            src={assetPath(scrolled ? "/images/logo-vieira-preta.png" : "/images/logo-vieira-branca.png")}
             alt="Vieira Odontologia"
             width={220}
-            height={127}
+            height={112}
             priority
-            className="h-9 w-auto transition-[filter] duration-[400ms] sm:h-10"
-            style={{ filter: scrolled ? "none" : "brightness(0) invert(1)" }}
+            className="h-9 w-auto sm:h-10"
           />
         </Link>
 
@@ -654,7 +653,7 @@ export function HomeExperience() {
 
       {/* FOOTER */}
       <footer className="bg-cream px-6 pb-8 pt-16 lg:px-20 lg:pb-10 lg:pt-24">
-        <Image src={assetPath("/images/logo-vieira.png")} alt="Vieira Odontologia" width={220} height={127} className="h-10 w-auto" />
+        <Image src={assetPath("/images/logo-vieira-preta.png")} alt="Vieira Odontologia" width={220} height={112} className="h-10 w-auto" />
         <div className="mt-16 grid grid-cols-2 gap-8 lg:grid-cols-4 lg:gap-10">
           <div>
             <div className="mb-4 text-[11px] tracking-[1.5px] text-ink-soft">NAVEGAÇÃO</div>

@@ -28,10 +28,10 @@ export function Header() {
       <div className="container-page flex h-16 items-center justify-between sm:h-20">
         <Link href="/" className="flex items-center">
           <Image
-            src={assetPath("/images/logo-vieira.png")}
+            src={assetPath("/images/logo-vieira-preta.png")}
             alt="Vieira Odontologia"
             width={220}
-            height={127}
+            height={112}
             className="h-9 w-auto sm:h-10"
             priority
           />

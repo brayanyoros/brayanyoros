@@ -1,8 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { clinic, treatments } from "@/lib/clinic-data";
+import { assetPath } from "@/lib/site";
 import { ScheduleCTA } from "@/components/CTAButton";
 import { TrackedExternalLink } from "@/components/TrackedLink";
 
@@ -32,7 +34,13 @@ export function Footer() {
 
         <div className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <p className="font-display text-lg font-semibold text-cream">{clinic.name}</p>
+            <Image
+              src={assetPath("/images/logo-vieira-branca.png")}
+              alt={clinic.name}
+              width={220}
+              height={112}
+              className="h-9 w-auto"
+            />
             <p className="mt-2 text-sm text-cream/70">
               {clinic.dentist.fullName}
               <br />
