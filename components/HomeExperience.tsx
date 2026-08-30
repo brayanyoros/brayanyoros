@@ -20,11 +20,9 @@ const navLinks = [
 
 const treatmentLinks = [
   { n: "01", name: "Clareamento Dental", slug: "clareamento-dental-teresopolis", hasMatchingPhoto: false },
-  { n: "02", name: "Resina Composta", slug: "restauracao-estetica-resina-teresopolis", hasMatchingPhoto: true },
-  { n: "03", name: "Fechamento de Diastemas", slug: "restauracao-estetica-resina-teresopolis", hasMatchingPhoto: true },
-  { n: "04", name: "Restaurações Estéticas", slug: "restauracao-estetica-resina-teresopolis", hasMatchingPhoto: true },
-  { n: "05", name: "Reabilitação Estética", slug: "restauracao-estetica-resina-teresopolis", hasMatchingPhoto: false },
-  { n: "06", name: "Prótese Dentária", slug: "protese-dentaria-teresopolis", hasMatchingPhoto: false },
+  { n: "02", name: "Fechamento de Diastemas", slug: "restauracao-estetica-resina-teresopolis", hasMatchingPhoto: true },
+  { n: "03", name: "Restaurações Estéticas", slug: "restauracao-estetica-resina-teresopolis", hasMatchingPhoto: true },
+  { n: "04", name: "Prótese Dentária", slug: "protese-dentaria-teresopolis", hasMatchingPhoto: false },
 ] as const;
 
 const caseMeta: Record<string, { title: string; subtitle: string }> = {
