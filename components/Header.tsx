@@ -11,10 +11,7 @@ const navItems = [
   { href: "/", label: "Início" },
   { href: "/clinica", label: "A Clínica" },
   { href: "/tratamentos", label: "Tratamentos" },
-  { href: "/equipe", label: "Equipe" },
   { href: "/resultados", label: "Resultados" },
-  { href: "/avaliacoes", label: "Avaliações" },
-  { href: "/#duvidas", label: "Dúvidas" },
   { href: "/contato", label: "Contato" },
 ];
 
