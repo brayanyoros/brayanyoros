@@ -16,7 +16,9 @@ export type ResultCase = {
   moreAngles?: { src: string; label: "Antes" | "Depois" }[];
 };
 
-export const resultCases: ResultCase[] = [
+// Casos com fotos reais aparecem primeiro — assim o carrossel da Home e a
+// lista de /resultados abrem mostrando imagem, não um placeholder.
+const allCases: ResultCase[] = [
   {
     slug: "fechamento-diastema-resina-2-anos",
     title: "Fechamento de diastema (espaços) com resina composta — 2 anos de acompanhamento",
@@ -76,4 +78,9 @@ export const resultCases: ResultCase[] = [
       { src: "/images/carie-secundaria-depois-3.png", label: "Depois" },
     ],
   },
+];
+
+export const resultCases: ResultCase[] = [
+  ...allCases.filter((c) => c.images),
+  ...allCases.filter((c) => !c.images),
 ];
