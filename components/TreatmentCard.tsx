@@ -7,10 +7,10 @@ import { assetPath } from "@/lib/site";
 export function TreatmentCard({ treatment }: { treatment: Treatment }) {
   return (
     <article className="group flex flex-col overflow-hidden rounded-2xl border border-line bg-white/60 transition-shadow hover:shadow-lg hover:shadow-primary/5">
-      {treatment.photo ? (
+      {treatment.photos?.card ? (
         <div className="relative aspect-[16/10] overflow-hidden">
           <Image
-            src={assetPath(treatment.photo)}
+            src={assetPath(treatment.photos.card)}
             alt={`Foto real — ${treatment.shortName}`}
             fill
             sizes="(min-width: 1024px) 33vw, 100vw"

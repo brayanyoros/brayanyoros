@@ -85,10 +85,10 @@ export default async function TreatmentPage({
               </WhatsAppCTA>
             </div>
           </div>
-          {treatment.photo ? (
+          {treatment.photos?.hero ? (
             <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
               <Image
-                src={assetPath(treatment.photo)}
+                src={assetPath(treatment.photos.hero)}
                 alt={`Foto real — ${treatment.shortName}`}
                 fill
                 sizes="(min-width: 1024px) 45vw, 100vw"

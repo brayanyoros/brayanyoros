@@ -19,7 +19,7 @@ const navLinks = [
 ];
 
 const treatmentLinks = [
-  { n: "01", name: "Clareamento Dental", slug: "clareamento-dental-teresopolis", hasMatchingPhoto: false },
+  { n: "01", name: "Clareamento Dental", slug: "clareamento-dental-teresopolis", hasMatchingPhoto: true },
   { n: "02", name: "Fechamento de Diastemas", slug: "restauracao-estetica-resina-teresopolis", hasMatchingPhoto: true },
   { n: "03", name: "Restaurações Estéticas", slug: "restauracao-estetica-resina-teresopolis", hasMatchingPhoto: false },
   { n: "04", name: "Prótese Dentária", slug: "protese-dentaria-teresopolis", hasMatchingPhoto: false },
@@ -73,7 +73,7 @@ export function HomeExperience() {
   const activeTreatmentData = treatments.find((t) => t.slug === treatmentLinks[activeTreatment].slug);
   const activeTreatmentIcon = activeTreatmentData?.icon ?? "tooth";
   const activeTreatmentPhoto = treatmentLinks[activeTreatment].hasMatchingPhoto
-    ? activeTreatmentData?.photo
+    ? activeTreatmentData?.photos?.panel
     : undefined;
 
   return (

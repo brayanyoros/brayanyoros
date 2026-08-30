@@ -66,7 +66,9 @@ export type Treatment = {
   name: string;
   shortName: string;
   icon: "tooth" | "drop" | "crown";
-  photo?: string;
+  // Cada slot tem sua própria foto, já recortada na proporção certa pelo
+  // cliente — evita que o object-cover corte bordas importantes.
+  photos?: { card?: string; hero?: string; panel?: string };
   metaTitle: string;
   metaDescription: string;
   problem: string;
@@ -89,6 +91,11 @@ export const treatments: Treatment[] = [
     name: "Clareamento Dental",
     shortName: "Clareamento Dental",
     icon: "tooth",
+    photos: {
+      card: "/images/clareamento-depois-card.png",
+      hero: "/images/clareamento-depois-destaque.png",
+      panel: "/images/clareamento-depois-painel.png",
+    },
     metaTitle: "Clareamento Dental em Teresópolis | Vieira Odontologia",
     metaDescription:
       "Clareamento dental em consultório ou conjugado (consultório + caseiro) em Teresópolis, com acompanhamento do Dr. Luis Vieira (CRO-RJ 55611). Agende sua avaliação.",
@@ -141,7 +148,11 @@ export const treatments: Treatment[] = [
     name: "Restaurações Estéticas em Resina Composta",
     shortName: "Restaurações Estéticas",
     icon: "drop",
-    photo: "/images/carie-secundaria-depois.png",
+    photos: {
+      card: "/images/carie-secundaria-depois.png",
+      hero: "/images/carie-secundaria-depois.png",
+      panel: "/images/carie-secundaria-depois.png",
+    },
     metaTitle: "Restaurações Estéticas em Resina Composta em Teresópolis | Vieira Odontologia",
     metaDescription:
       "Restaurações em resina composta, fechamento de diastemas, troca de restaurações antigas e reabilitação de dentes fraturados em Teresópolis, com o Dr. Luis Vieira (CRO-RJ 55611).",
