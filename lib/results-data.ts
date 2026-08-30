@@ -10,6 +10,9 @@ export type ResultCase = {
   relatedTreatmentSlug: string;
   paragraphs: string[];
   images?: { before: string; after: string };
+  // Proporção nativa das fotos deste caso, para exibir o enquadramento
+  // que o cliente recortou sem o object-cover aparar as bordas.
+  imageRatio?: string;
   moreAngles?: { src: string; label: "Antes" | "Depois" }[];
 };
 
@@ -30,6 +33,11 @@ export const resultCases: ResultCase[] = [
     paragraphs: [
       "Paciente procurou o consultório para realizar clareamento dental e substituir uma restauração antiga no dente da frente, fraturado na infância. Após o clareamento, realizamos a troca da resina para adequação da cor, alcançando um resultado mais harmônico e natural com o sorriso.",
     ],
+    images: {
+      before: "/images/clareamento-antes-destaque.png",
+      after: "/images/clareamento-depois-destaque.png",
+    },
+    imageRatio: "aspect-[4/5]",
   },
   {
     slug: "clareamento-conjugado-troca-restauracao-incisivo-lateral",
@@ -60,6 +68,7 @@ export const resultCases: ResultCase[] = [
       before: "/images/carie-secundaria-antes.png",
       after: "/images/carie-secundaria-depois.png",
     },
+    imageRatio: "aspect-[5/4]",
     moreAngles: [
       { src: "/images/carie-secundaria-antes-2.png", label: "Antes" },
       { src: "/images/carie-secundaria-depois-2.png", label: "Depois" },

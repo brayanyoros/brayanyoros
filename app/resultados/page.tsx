@@ -44,7 +44,7 @@ export default function ResultadosPage() {
                 <div className="grid grid-cols-2 gap-3">
                   {c.images ? (
                     <>
-                      <div className="relative aspect-square overflow-hidden rounded-2xl">
+                      <div className={`relative ${c.imageRatio ?? "aspect-square"} overflow-hidden rounded-2xl`}>
                         <Image
                           src={assetPath(c.images.before)}
                           alt={`Antes — ${c.title}`}
@@ -56,7 +56,7 @@ export default function ResultadosPage() {
                           Antes
                         </span>
                       </div>
-                      <div className="relative aspect-square overflow-hidden rounded-2xl">
+                      <div className={`relative ${c.imageRatio ?? "aspect-square"} overflow-hidden rounded-2xl`}>
                         <Image
                           src={assetPath(c.images.after)}
                           alt={`Depois — ${c.title}`}
