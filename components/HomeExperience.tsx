@@ -32,6 +32,7 @@ const caseMeta: Record<string, { title: string; subtitle: string }> = {
   "clareamento-troca-restauracao-incisivo-central": { title: "CLAREAMENTO DENTAL", subtitle: "Clareamento + troca de restauração" },
   "clareamento-conjugado-troca-restauracao-incisivo-lateral": { title: "CLAREAMENTO CONJUGADO", subtitle: "Clareamento dental" },
   "restauracao-estetica-incisivo-central": { title: "RESTAURAÇÃO ESTÉTICA", subtitle: "Resina composta" },
+  "restauracoes-diretas-carie-secundaria-molares": { title: "TROCA POR CÁRIE SECUNDÁRIA", subtitle: "Resina composta" },
 };
 
 const faqs = [

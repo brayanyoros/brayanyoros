@@ -46,4 +46,13 @@ export const resultCases: ResultCase[] = [
       "Paciente apresentou fratura em incisivo central e foi realizada a reabilitação com resina composta, devolvendo forma, função e estética ao dente.",
     ],
   },
+  {
+    slug: "restauracoes-diretas-carie-secundaria-molares",
+    title: "Restaurações diretas para substituição de resinas infiltradas por cárie secundária",
+    relatedTreatmentSlug: "restauracao-estetica-resina-teresopolis",
+    paragraphs: [
+      "Paciente apresentava restaurações antigas em dentes posteriores com infiltração marginal — as bordas escurecidas indicavam a entrada de saliva e bactérias entre a resina e o dente, resultando em lesões de cárie secundária sob e ao redor das restaurações.",
+      "As restaurações comprometidas foram removidas e substituídas por novas restaurações diretas em resina composta, eliminando o tecido cariado e devolvendo a vedação e a função dos dentes.",
+    ],
+  },
 ];
