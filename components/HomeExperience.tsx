@@ -338,13 +338,24 @@ export function HomeExperience() {
 
       {/* DESTAQUE */}
       <section className="relative h-[520px] overflow-hidden lg:h-[640px]">
-        <div className="absolute inset-0">
-          <PlaceholderMedia
-            label="Foto real — sorriso pós-tratamento (a inserir)"
-            tone="primary"
-            rounded={false}
-            ratio="h-full w-full"
-            icon="smile"
+        {/* Dois recortes do mesmo sorriso: o navegador baixa só o que a
+            largura da tela pede, então nenhum enquadramento é cortado. */}
+        <div className="absolute inset-0 lg:hidden">
+          <Image
+            src={assetPath("/images/banner-sorriso-mobile.png")}
+            alt="Sorriso após tratamento estético"
+            fill
+            sizes="100vw"
+            className="object-cover"
+          />
+        </div>
+        <div className="absolute inset-0 hidden lg:block">
+          <Image
+            src={assetPath("/images/banner-sorriso-desktop.png")}
+            alt="Sorriso após tratamento estético"
+            fill
+            sizes="100vw"
+            className="object-cover"
           />
         </div>
         <div
