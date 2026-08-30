@@ -92,7 +92,7 @@ export const treatments: Treatment[] = [
     shortName: "Clareamento Dental",
     icon: "tooth",
     photos: {
-      card: "/images/clareamento-depois-card.png",
+      card: "/images/clareamento-antes-card.png",
       hero: "/images/clareamento-depois-destaque.png",
       panel: "/images/clareamento-depois-painel.png",
     },
