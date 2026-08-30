@@ -19,12 +19,12 @@ const navLinks = [
 ];
 
 const treatmentLinks = [
-  { n: "01", name: "Clareamento Dental", slug: "clareamento-dental-teresopolis" },
-  { n: "02", name: "Resina Composta", slug: "restauracao-estetica-resina-teresopolis" },
-  { n: "03", name: "Fechamento de Diastemas", slug: "restauracao-estetica-resina-teresopolis" },
-  { n: "04", name: "Restaurações Estéticas", slug: "restauracao-estetica-resina-teresopolis" },
-  { n: "05", name: "Reabilitação Estética", slug: "restauracao-estetica-resina-teresopolis" },
-  { n: "06", name: "Prótese Dentária", slug: "protese-dentaria-teresopolis" },
+  { n: "01", name: "Clareamento Dental", slug: "clareamento-dental-teresopolis", hasMatchingPhoto: false },
+  { n: "02", name: "Resina Composta", slug: "restauracao-estetica-resina-teresopolis", hasMatchingPhoto: true },
+  { n: "03", name: "Fechamento de Diastemas", slug: "restauracao-estetica-resina-teresopolis", hasMatchingPhoto: false },
+  { n: "04", name: "Restaurações Estéticas", slug: "restauracao-estetica-resina-teresopolis", hasMatchingPhoto: true },
+  { n: "05", name: "Reabilitação Estética", slug: "restauracao-estetica-resina-teresopolis", hasMatchingPhoto: false },
+  { n: "06", name: "Prótese Dentária", slug: "protese-dentaria-teresopolis", hasMatchingPhoto: false },
 ] as const;
 
 const caseMeta: Record<string, { title: string; subtitle: string }> = {
@@ -74,7 +74,9 @@ export function HomeExperience() {
   const activeReviewData = testimonials[activeReview];
   const activeTreatmentData = treatments.find((t) => t.slug === treatmentLinks[activeTreatment].slug);
   const activeTreatmentIcon = activeTreatmentData?.icon ?? "tooth";
-  const activeTreatmentPhoto = activeTreatmentData?.photo;
+  const activeTreatmentPhoto = treatmentLinks[activeTreatment].hasMatchingPhoto
+    ? activeTreatmentData?.photo
+    : undefined;
 
   return (
     <div style={{ fontFamily: "var(--font-sans)" }} className="relative overflow-x-hidden bg-cream text-ink">
