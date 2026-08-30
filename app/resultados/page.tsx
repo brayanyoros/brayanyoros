@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { SectionHeading } from "@/components/SectionHeading";
 import { PlaceholderMedia } from "@/components/PlaceholderMedia";
@@ -6,6 +7,7 @@ import { ScheduleCTA } from "@/components/CTAButton";
 import { BreadcrumbSchema } from "@/components/StructuredData";
 import { resultCases } from "@/lib/results-data";
 import { treatments } from "@/lib/clinic-data";
+import { assetPath } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Resultados",
@@ -40,16 +42,47 @@ export default function ResultadosPage() {
                 className="grid gap-6 rounded-2xl border border-line bg-white/60 p-6 sm:p-8 lg:grid-cols-2 lg:items-center"
               >
                 <div className="grid grid-cols-2 gap-3">
-                  <PlaceholderMedia
-                    label="Foto real — antes (a inserir)"
-                    ratio="aspect-square"
-                    tone="cream"
-                  />
-                  <PlaceholderMedia
-                    label="Foto real — depois (a inserir)"
-                    ratio="aspect-square"
-                    tone="cream"
-                  />
+                  {c.images ? (
+                    <>
+                      <div className="relative aspect-square overflow-hidden rounded-2xl">
+                        <Image
+                          src={assetPath(c.images.before)}
+                          alt={`Antes — ${c.title}`}
+                          fill
+                          sizes="(min-width: 1024px) 25vw, 45vw"
+                          className="object-cover"
+                        />
+                        <span className="absolute left-2 top-2 rounded-full bg-primary/80 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-cream">
+                          Antes
+                        </span>
+                      </div>
+                      <div className="relative aspect-square overflow-hidden rounded-2xl">
+                        <Image
+                          src={assetPath(c.images.after)}
+                          alt={`Depois — ${c.title}`}
+                          fill
+                          sizes="(min-width: 1024px) 25vw, 45vw"
+                          className="object-cover"
+                        />
+                        <span className="absolute left-2 top-2 rounded-full bg-primary/80 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-cream">
+                          Depois
+                        </span>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <PlaceholderMedia
+                        label="Foto real — antes (a inserir)"
+                        ratio="aspect-square"
+                        tone="cream"
+                      />
+                      <PlaceholderMedia
+                        label="Foto real — depois (a inserir)"
+                        ratio="aspect-square"
+                        tone="cream"
+                      />
+                    </>
+                  )}
                 </div>
                 <div>
                   <h2 className="font-display text-xl font-semibold text-ink sm:text-2xl">

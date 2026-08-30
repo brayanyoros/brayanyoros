@@ -9,6 +9,7 @@ export type ResultCase = {
   title: string;
   relatedTreatmentSlug: string;
   paragraphs: string[];
+  images?: { before: string; after: string };
 };
 
 export const resultCases: ResultCase[] = [
@@ -54,5 +55,9 @@ export const resultCases: ResultCase[] = [
       "Paciente apresentava restaurações antigas em dentes posteriores com infiltração marginal — as bordas escurecidas indicavam a entrada de saliva e bactérias entre a resina e o dente, resultando em lesões de cárie secundária sob e ao redor das restaurações.",
       "As restaurações comprometidas foram removidas e substituídas por novas restaurações diretas em resina composta, eliminando o tecido cariado e devolvendo a vedação e a função dos dentes.",
     ],
+    images: {
+      before: "/images/carie-secundaria-antes.png",
+      after: "/images/carie-secundaria-depois.png",
+    },
   },
 ];

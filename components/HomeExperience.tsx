@@ -421,13 +421,33 @@ export function HomeExperience() {
         <div className="mt-16">
           <div className="flex flex-col gap-4 bg-cream-dark p-4 lg:h-[480px] lg:flex-row lg:p-6">
             <div className="relative flex h-[300px] flex-1 items-center justify-center overflow-hidden lg:h-full">
-              <PlaceholderMedia label="Foto real — antes (a inserir)" tone="cream" rounded={false} ratio="h-full w-full" showLabel={false} />
+              {activeCaseData.images ? (
+                <Image
+                  src={assetPath(activeCaseData.images.before)}
+                  alt={`Antes — ${activeCaseData.title}`}
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover"
+                />
+              ) : (
+                <PlaceholderMedia label="Foto real — antes (a inserir)" tone="cream" rounded={false} ratio="h-full w-full" showLabel={false} />
+              )}
               <span className="absolute bottom-3.5 left-3.5 bg-primary/65 px-2.5 py-1 text-[10px] tracking-[1px] text-cream">
                 ANTES
               </span>
             </div>
             <div className="relative flex h-[300px] flex-1 items-center justify-center overflow-hidden lg:h-full">
-              <PlaceholderMedia label="Foto real — depois (a inserir)" tone="cream" rounded={false} ratio="h-full w-full" showLabel={false} />
+              {activeCaseData.images ? (
+                <Image
+                  src={assetPath(activeCaseData.images.after)}
+                  alt={`Depois — ${activeCaseData.title}`}
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover"
+                />
+              ) : (
+                <PlaceholderMedia label="Foto real — depois (a inserir)" tone="cream" rounded={false} ratio="h-full w-full" showLabel={false} />
+              )}
               <span className="absolute bottom-3.5 left-3.5 bg-primary/65 px-2.5 py-1 text-[10px] tracking-[1px] text-cream">
                 DEPOIS
               </span>
