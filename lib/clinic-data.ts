@@ -198,6 +198,62 @@ export const treatments: Treatment[] = [
     ],
   },
   {
+    slug: "troca-restauracoes-antigas-teresopolis",
+    name: "Troca de Restaurações Antigas",
+    shortName: "Troca de Restaurações",
+    icon: "drop",
+    photos: {
+      card: "/images/carie-secundaria-depois.png",
+      hero: "/images/carie-secundaria-depois.png",
+      panel: "/images/carie-secundaria-depois.png",
+    },
+    metaTitle: "Troca de Restaurações Antigas em Teresópolis | Vieira Odontologia",
+    metaDescription:
+      "Substituição de restaurações antigas com infiltração ou cárie secundária por restaurações diretas em resina composta, em Teresópolis, com o Dr. Luis Vieira (CRO-RJ 55611).",
+    problem: "Restaurações antigas escurecidas, desgastadas ou com infiltração nas bordas.",
+    benefit: "Remoção do tecido comprometido e devolução da vedação e da função do dente.",
+    summary:
+      "Substituição de restaurações antigas em resina ou amálgama por novas restaurações diretas em resina composta, feitas no consultório.",
+    whatIsIt:
+      "Com o tempo, uma restauração pode se desgastar, escurecer ou perder a vedação nas bordas. Quando isso acontece, saliva e bactérias conseguem entrar entre a resina e o dente, o que pode levar à cárie secundária — uma lesão que se desenvolve sob ou ao redor da restauração antiga. O tratamento consiste em remover a restauração comprometida junto com o tecido cariado e refazer o dente com resina composta, diretamente no consultório.",
+    indicatedFor: [
+      "Pacientes com restaurações antigas em resina ou amálgama, escurecidas, manchadas ou com infiltração.",
+      "Quem apresenta bordas escurecidas ao redor de restaurações existentes.",
+      "Pessoas em manutenção periódica que receberam indicação de substituir restaurações desgastadas.",
+    ],
+    solves: [
+      "Restaurações antigas, escurecidas ou comprometidas.",
+      "Infiltração marginal entre a restauração e o dente.",
+      "Cárie secundária sob ou ao redor de restaurações existentes.",
+    ],
+    howItWorks:
+      "O tratamento começa com uma avaliação clínica e, quando necessário, radiográfica, para entender a extensão do comprometimento sob a restauração antiga. A restauração é removida junto com o tecido cariado, e o dente é reconstruído em camadas com resina composta, com escultura e acabamento realizados na própria consulta pelo Dr. Luis Vieira.",
+    steps: [
+      { title: "Avaliação e diagnóstico", description: "Exame clínico (e radiográfico quando necessário) para identificar a extensão da infiltração." },
+      { title: "Planejamento", description: "Definição da abordagem e da cor da resina de acordo com o dente e os vizinhos." },
+      { title: "Remoção da restauração antiga", description: "Retirada da resina comprometida junto com o tecido cariado." },
+      { title: "Nova restauração em resina", description: "Reconstrução em camadas diretamente no consultório." },
+      { title: "Acabamento e polimento", description: "Ajuste de forma, contato e brilho para restabelecer a vedação e a função." },
+    ],
+    benefits: [
+      "Técnica direta, geralmente concluída em consultório.",
+      "Preserva a estrutura dentária saudável remanescente.",
+      "Restabelece a vedação da restauração e a função mastigatória.",
+    ],
+    limitations: [
+      "A durabilidade da resina depende de fatores como hábitos, oclusão e manutenção periódica.",
+      "Casos com perda extensa de estrutura podem exigir outras soluções, avaliadas individualmente.",
+    ],
+    whoPerforms:
+      "O planejamento e a execução são realizados pelo Dr. Luis Rodrigues Vieira (CRO-RJ 55611).",
+    faqs: [
+      { question: "É possível trocar uma restauração antiga sem prejudicar o dente?", answer: "Na maioria dos casos sim. O Dr. Luis Vieira avalia a extensão da restauração antiga antes de definir a melhor forma de substituição." },
+      { question: "Como sei que minha restauração precisa ser trocada?", answer: "Bordas escurecidas, sensibilidade, desgaste visível ou fratura da resina são sinais que merecem avaliação. A confirmação é feita no exame clínico." },
+      { question: "O que é cárie secundária?", answer: "É a lesão de cárie que se desenvolve sob ou ao redor de uma restauração existente, quando a vedação entre a resina e o dente é perdida e permite a entrada de saliva e bactérias." },
+      { question: "Quanto custa trocar uma restauração?", answer: "O valor depende do número de dentes, da complexidade do caso e do material indicado, definidos na avaliação." },
+    ],
+  },
+  {
     slug: "restauracao-estetica-resina-teresopolis",
     name: "Restaurações Estéticas em Resina Composta",
     shortName: "Restaurações Estéticas",
@@ -209,21 +265,20 @@ export const treatments: Treatment[] = [
     },
     metaTitle: "Restaurações Estéticas em Resina Composta em Teresópolis | Vieira Odontologia",
     metaDescription:
-      "Troca de restaurações antigas e reabilitação de dentes fraturados com resina composta em Teresópolis, com o Dr. Luis Vieira (CRO-RJ 55611).",
-    problem: "Dentes fraturados ou restaurações antigas desgastadas, escurecidas e com infiltração.",
+      "Reabilitação de dentes fraturados ou desgastados com resina composta em Teresópolis, devolvendo forma, função e estética, com o Dr. Luis Vieira (CRO-RJ 55611).",
+    problem: "Dentes da frente fraturados, desgastados ou com perda de estrutura.",
     benefit: "Recuperação da forma, função e harmonia do sorriso com técnica direta em resina composta.",
     summary:
-      "Reconstrução de dentes fraturados e substituição de restaurações antigas com resina composta aplicada diretamente no consultório.",
+      "Reconstrução de dentes fraturados ou desgastados com resina composta aplicada diretamente no consultório, devolvendo forma e estética.",
     whatIsIt:
-      "A resina composta é um material estético usado para reconstruir a forma dos dentes diretamente no consultório, sem a necessidade de próteses de laboratório na maioria dos casos. Na Vieira Odontologia, esse recurso é utilizado para substituir restaurações antigas que escureceram, se desgastaram ou sofreram infiltração, e para reconstruir dentes fraturados, sempre planejado caso a caso pelo Dr. Luis Vieira.",
+      "A resina composta é um material estético usado para reconstruir a forma dos dentes diretamente no consultório, sem a necessidade de próteses de laboratório na maioria dos casos. Na Vieira Odontologia, esse recurso é utilizado para reconstruir dentes que perderam estrutura por fratura, trauma ou desgaste, devolvendo forma, função e estética — sempre planejado caso a caso pelo Dr. Luis Vieira.",
     indicatedFor: [
-      "Pacientes com restaurações antigas em resina ou amálgama, escurecidas, manchadas ou com infiltração.",
       "Pessoas com dentes fraturados por trauma, desgaste ou cáries extensas, que precisam recompor a estrutura dentária.",
+      "Pacientes que fraturaram um dente da frente e buscam devolver a forma original ao sorriso.",
     ],
     solves: [
-      "Restaurações antigas, escurecidas ou comprometidas.",
-      "Cárie secundária sob restaurações com infiltração marginal.",
       "Fraturas e perdas de estrutura dentária.",
+      "Desgaste que alterou a forma e o comprimento dos dentes.",
     ],
     howItWorks:
       "O tratamento começa com uma avaliação clínica e, quando necessário, radiográfica, para entender a extensão do problema. O Dr. Luis Vieira planeja a forma, o volume e a cor da resina a ser utilizada, buscando harmonia com os dentes vizinhos. A aplicação é feita em camadas, diretamente sobre o dente, com escultura e acabamento realizados na própria consulta.",
