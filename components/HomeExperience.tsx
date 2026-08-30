@@ -24,7 +24,7 @@ const treatmentLinks: { n: string; name: string; slug: string; panelPhoto?: stri
   // do slug — senão um caso de molar ilustra "diastema", por exemplo.
   { n: "01", name: "Clareamento Dental", slug: "clareamento-dental-teresopolis", panelPhoto: "/images/clareamento-depois-painel.png" },
   { n: "02", name: "Fechamento de Diastemas", slug: "restauracao-estetica-resina-teresopolis", panelPhoto: "/images/diastema-depois-painel.png" },
-  { n: "03", name: "Restaurações Estéticas", slug: "restauracao-estetica-resina-teresopolis" },
+  { n: "03", name: "Restaurações Estéticas", slug: "restauracao-estetica-resina-teresopolis", panelPhoto: "/images/restauracao-incisivo-depois-painel.png" },
   { n: "04", name: "Prótese Dentária", slug: "protese-dentaria-teresopolis" },
 ];
 

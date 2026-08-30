@@ -149,9 +149,9 @@ export const treatments: Treatment[] = [
     shortName: "Restaurações Estéticas",
     icon: "drop",
     photos: {
-      card: "/images/carie-secundaria-depois.png",
-      hero: "/images/carie-secundaria-depois.png",
-      panel: "/images/carie-secundaria-depois.png",
+      card: "/images/restauracao-incisivo-depois-card.png",
+      hero: "/images/restauracao-incisivo-depois-destaque.png",
+      panel: "/images/restauracao-incisivo-depois-painel.png",
     },
     metaTitle: "Restaurações Estéticas em Resina Composta em Teresópolis | Vieira Odontologia",
     metaDescription:

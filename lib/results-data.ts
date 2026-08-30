@@ -53,6 +53,11 @@ const allCases: ResultCase[] = [
     paragraphs: [
       "Paciente apresentou fratura em incisivo central e foi realizada a reabilitação com resina composta, devolvendo forma, função e estética ao dente.",
     ],
+    images: {
+      before: "/images/restauracao-incisivo-antes-destaque.png",
+      after: "/images/restauracao-incisivo-depois-destaque.png",
+    },
+    imageRatio: "aspect-[4/5]",
   },
   {
     slug: "restauracoes-diretas-carie-secundaria-molares",
